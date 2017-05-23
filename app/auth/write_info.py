@@ -2,13 +2,12 @@
 import os
 import sys
 
+
 def run():
-    mainpath=os.getcwd()
+    mainpath = os.getcwd()
     sys.path.append(mainpath)
-    fr=open(mainpath+'/add_database_config.txt','r+')
-    fw=open(mainpath+'/app/database_model.py','w+',encoding='utf-8')
-
-
+    fr = open(mainpath+'/add_database_config.txt','r+')
+    fw = open(mainpath+'/app/database_model.py','w+',encoding='utf-8')
 
     fw.writelines('''from . import db
 
@@ -86,9 +85,9 @@ class zabbix_warning(db.Model):
 #     tablename = name
 
     ''')
-    dbs=fr.readline()
-    dbs=dbs.rstrip('\n')
-    arr=dbs.split(',')
+    dbs = fr.readline()
+    dbs = dbs.rstrip('\n')
+    arr = dbs.split(',')
     for dbname in arr:
         fw.writelines('''
 
@@ -803,11 +802,10 @@ class %s_rac_busy_score(db.Model):
 #     score = db.Column(db.BIGINT)
 #     value = db.Column(db.BIGINT)
 
-    '''%((dbname,)*147))
+    ''' % ((dbname,)*147))
 
     fw.close()
     fr.close()
-
 
     fw.close()
     fr.close()

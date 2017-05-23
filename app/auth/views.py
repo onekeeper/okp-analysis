@@ -8,7 +8,7 @@ from flask_login import login_user, logout_user, login_required, \
 from app.auth.write_info import run
 from . import auth
 from .forms import LoginForm, RegistrationForm, ChangePasswordForm,\
-     ChangeEmailForm,ChangeUsernameForm,ChangeDatabaseModel,ResetPasswordForm
+     ChangeEmailForm, ChangeUsernameForm, ChangeDatabaseModel, ResetPasswordForm
 from .. import db
 from ..models import User
 
@@ -45,6 +45,7 @@ def register():
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
 
+
 @auth.route('/change-password', methods=['GET', 'POST'])
 @login_required
 def change_password():
@@ -58,6 +59,7 @@ def change_password():
         else:
             flash('Invalid password.')
     return render_template("auth/change_password.html", form=form)
+
 
 @auth.route('/change-email', methods=['GET', 'POST'])
 @login_required
@@ -73,6 +75,7 @@ def change_email():
             flash('Invalid email or password.')
     return render_template("auth/change_email.html", form=form)
 
+
 @auth.route('/change-username', methods=['GET', 'POST'])
 @login_required
 def change_username():
@@ -87,7 +90,8 @@ def change_username():
             flash('Invalid username or password.')
     return render_template("auth/change_username.html", form=form)
 
-@auth.route('/reset-password',methods=['GET','POST'])
+
+@auth.route('/reset-password', methods=['GET', 'POST'])
 @login_required
 def resetpassword():
     if current_user.is_administrator:
@@ -105,7 +109,8 @@ def resetpassword():
         return render_template("auth/reset_password.html", form=form)
     return redirect(url_for('main.index'))
 
-@auth.route('/reset-model',methods=['GET','POST'])
+
+@auth.route('/reset-model', methods=['GET', 'POST'])
 @login_required
 def createdatamodel():
     mainpath = os.getcwd()
@@ -122,4 +127,4 @@ def createdatamodel():
     fr = open(mainpath + '/add_database_config.txt', 'r+')
     post = fr.readlines()
     fr.close()
-    return render_template('auth/reload_databasemodel.html', form=form,post=post)
+    return render_template('auth/reload_databasemodel.html', form=form, post=post)
