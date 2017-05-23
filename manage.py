@@ -38,7 +38,7 @@ def init():
     print("account is : admin")
     print("password is : okp@admin!")
     admin = Role.query.filter_by(name='Administrator').first().id
-    print("admin role id is : %s",admin)
+    print("admin role id is : %s" % admin)
     smy = User.query.filter_by(username='admin').first()
     smy.role_id = admin
     db.session.add(smy)

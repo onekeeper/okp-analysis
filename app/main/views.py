@@ -124,7 +124,8 @@ def charts(table_name):
 
     if stop_paint is True:
         flash("查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据")
-        return redirect(url_for('.none_value', value="查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据"))
+        return redirect(url_for('.none_value',
+                                value="查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据"))
 
     system_list, object_list, model_list = left_nav()
     return render_template('charts.html', sys_id=sys_id, object_id=object_id, table_name=table_name,
@@ -199,7 +200,7 @@ def add_manage():
             db.session.add(new_object)
 
             # 依据模板循环添加aop_model_score 记录
-            model_temp_list = aop_model_template.query.filter_by(object_type=form.type.data)
+            model_temp_list = aop_model_score.query.filter_by(object_type=form.type.data)
             for model_temp in model_temp_list:
                 new_model = aop_model_score(
                     sys_id=form.sys_id.data,
@@ -458,7 +459,8 @@ def usercontrol():
             # print(">>>>>>>>>>>>>>>>>>>>")
             for j in ch_list:
                 # print(form[j])
-                # if User.query.filter_by(username=j).first().role_id != Role.query.filter_by(name=form[j]).first().id:
+                # if User.query.filter_by(username=j).first().role_id \
+                # != Role.query.filter_by(name=form[j]).first().id:
                 # else:
                 # return redirect(url_for('auth.logout'))
                 # commit

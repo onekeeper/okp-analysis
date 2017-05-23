@@ -13,7 +13,7 @@ class Permission:
 class aop_system(db.Model):
     __tablename__ = 'aop_system'
 
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
+    sys_id = db.Column(db.VARCHAR(100), primary_key=True)
     sysname = db.Column(db.UnicodeText)
     status = db.Column(db.Integer)
     score = db.Column(db.DECIMAL)
@@ -22,8 +22,8 @@ class aop_system(db.Model):
 class aop_object_score(db.Model):
     __tablename__ = 'aop_object_score'
 
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
+    sys_id = db.Column(db.VARCHAR(100), primary_key=True)
+    object_id = db.Column(db.VARCHAR(100), primary_key=True)
     object_type = db.Column(db.UnicodeText)
     object_name = db.Column(db.UnicodeText)
     instance_name = db.Column(db.UnicodeText)
@@ -36,10 +36,10 @@ class aop_object_score(db.Model):
 class aop_model_score(db.Model):
     __tablename__ = 'aop_model_score'
 
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
-    model_id = db.Column(db.UnicodeText, primary_key=True)
-    object_type = db.Column(db.UnicodeText, primary_key=True)
+    sys_id = db.Column(db.VARCHAR(100), primary_key=True)
+    object_id = db.Column(db.VARCHAR(100), primary_key=True)
+    model_id = db.Column(db.VARCHAR(100), primary_key=True)
+    object_type = db.Column(db.VARCHAR(100), primary_key=True)
     model_name = db.Column(db.UnicodeText)
     table_name = db.Column(db.UnicodeText)
     # table_name不作为主键。防止model_id冲突
