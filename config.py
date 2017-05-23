@@ -1,6 +1,15 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+# global variables
+MYSQL_DATABASE = 'hzmc_data'
+MYSQL_HOST = '127.0.0.1'
+MYSQL_ACCOUNT = 'root'
+MYSQL_PASSWORD = 'hzmcmysql'
+MYSQL_CONNECT = 'mysql+pymysql'
+
+# set database URI
+DATABASE_URI = MYSQL_CONNECT+'://'+MYSQL_ACCOUNT+':'+MYSQL_PASSWORD+'@'+MYSQL_HOST+'/'+MYSQL_DATABASE
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
@@ -23,8 +32,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = DATABASE_URI
     SQLALCHEMY_BINDS = {}
 
 config = {

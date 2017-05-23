@@ -23,5 +23,26 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 
+@manager.command
+def init():
+    """Run initalize database"""
+    db.create_all()
+    print("finish init database\n")
+    Role.insert_roles()
+    print("finish init roles\n")
+    smy = User(username='admin', email='admin@hzmc.com.cn',
+               password='okp@admin!')
+    db.session.add(smy)
+    db.session.commit()
+    print("finish create account\n")
+    print("account is : admin")
+    print("password is : okp@admin!")
+    admin = Role.query.filter_by(name='Administrator').first().id
+    print("admin role id is : %s",admin)
+    smy = User.query.filter_by(username='admin').first()
+    smy.role_id = admin
+    db.session.add(smy)
+    print("account role has been set to admin")
+
 if __name__ == '__main__':
     manager.run()

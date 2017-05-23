@@ -1,54 +1,5 @@
 from . import db
 
-class aop_system(db.Model):
-    __tablename__ = 'aop_system'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText,primary_key=True)
-    sysname = db.Column(db.UnicodeText)
-    status = db.Column(db.Integer)
-    score = db.Column(db.DECIMAL)
-
-
-class aop_object_score(db.Model):
-    __tablename__ = 'aop_object_score'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
-    object_type = db.Column(db.UnicodeText)
-    object_name = db.Column(db.UnicodeText)
-    instance_name = db.Column(db.UnicodeText)
-    score = db.Column(db.DECIMAL)
-    status = db.Column(db.Integer)
-    username = db.Column(db.UnicodeText)
-    password = db.Column(db.UnicodeText)
-
-
-class aop_model_score(db.Model):
-    __tablename__ = 'aop_model_score'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
-    model_id = db.Column(db.UnicodeText, primary_key=True)
-    object_type = db.Column(db.UnicodeText,primary_key=True)
-    model_name = db.Column(db.UnicodeText)
-    table_name = db.Column(db.UnicodeText)
-    #table_name不作为主键。防止model_id冲突
-    score = db.Column(db.DECIMAL)
-
-
-#model模板
-class aop_model_template(db.Model):
-    __tablename__ = 'aop_model_template'
-    __bind_key__ =  'hzmc_data'
-
-    object_type = db.Column(db.UnicodeText, primary_key=True)
-    model_id = db.Column(db.UnicodeText, primary_key=True)
-    model_name = db.Column(db.UnicodeText)
-    table_name = db.Column(db.UnicodeText)
-
 
 
 #告警

@@ -5,10 +5,45 @@ from . import db, login_manager
 
 
 class Permission:
-    READ = 0x01 #查看权限
-    UPDATE = 0x02 #部署权限
-    ADMINISTER = 0x80 #管理权限/重置用户密码等
+    READ = 0x01  # 查看权限
+    UPDATE = 0x02  # 部署权限
+    ADMINISTER = 0x80  # 管理权限/重置用户密码等
 
+
+class aop_system(db.Model):
+    __tablename__ = 'aop_system'
+
+    sys_id = db.Column(db.UnicodeText, primary_key=True)
+    sysname = db.Column(db.UnicodeText)
+    status = db.Column(db.Integer)
+    score = db.Column(db.DECIMAL)
+
+
+class aop_object_score(db.Model):
+    __tablename__ = 'aop_object_score'
+
+    sys_id = db.Column(db.UnicodeText, primary_key=True)
+    object_id = db.Column(db.UnicodeText, primary_key=True)
+    object_type = db.Column(db.UnicodeText)
+    object_name = db.Column(db.UnicodeText)
+    instance_name = db.Column(db.UnicodeText)
+    score = db.Column(db.DECIMAL)
+    status = db.Column(db.Integer)
+    username = db.Column(db.UnicodeText)
+    password = db.Column(db.UnicodeText)
+
+
+class aop_model_score(db.Model):
+    __tablename__ = 'aop_model_score'
+
+    sys_id = db.Column(db.UnicodeText, primary_key=True)
+    object_id = db.Column(db.UnicodeText, primary_key=True)
+    model_id = db.Column(db.UnicodeText, primary_key=True)
+    object_type = db.Column(db.UnicodeText, primary_key=True)
+    model_name = db.Column(db.UnicodeText)
+    table_name = db.Column(db.UnicodeText)
+    # table_name不作为主键。防止model_id冲突
+    score = db.Column(db.DECIMAL)
 
 
 class Role(db.Model):
@@ -21,12 +56,12 @@ class Role(db.Model):
 
     @staticmethod
     def insert_roles():
-        #注意roles当中值的写法。roles最终目的是生成元组。若生成的是int类型。
-        #则后续计算时，无法用int类型进行列表解析
+        # 注意roles当中值的写法。roles最终目的是生成元组。若生成的是int类型。
+        # 则后续计算时，无法用int类型进行列表解析
         roles = {
-            'User': (Permission.READ,True),
+            'User': (Permission.READ, True),
             'Operate': (Permission.READ |
-                          Permission.UPDATE,False),
+                        Permission.UPDATE, False),
             'Administrator': (0xff, False)
         }
         for r in roles:
@@ -71,7 +106,7 @@ class User(UserMixin, db.Model):
 
     def can(self, permissions):
         return self.role is not None and \
-            (self.role.permissions & permissions) == permissions
+               (self.role.permissions & permissions) == permissions
 
     def is_administrator(self):
         return self.can(Permission.ADMINISTER)
@@ -82,6 +117,7 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
+
 class AnonymousUser(AnonymousUserMixin):
     def can(self, permissions):
         return False
@@ -89,10 +125,10 @@ class AnonymousUser(AnonymousUserMixin):
     def is_administrator(self):
         return False
 
+
 login_manager.anonymous_user = AnonymousUser
+
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-
