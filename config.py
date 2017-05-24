@@ -7,9 +7,18 @@ MYSQL_HOST = '127.0.0.1'
 MYSQL_ACCOUNT = 'root'
 MYSQL_PASSWORD = 'hzmcmysql'
 MYSQL_CONNECT = 'mysql+pymysql'
+MYSQL_CHARTSET = 'charset=utf8'
+
+# global init healthy databases
+MYSQL_HEALTHY_DB = 'hzmc111,hzmc222'  # with no blankspace after comma; and same style with add_database_config
 
 # set database URI
-DATABASE_URI = MYSQL_CONNECT+'://'+MYSQL_ACCOUNT+':'+MYSQL_PASSWORD+'@'+MYSQL_HOST+'/'+MYSQL_DATABASE
+DATABASE_URI = MYSQL_CONNECT + \
+               '://'+MYSQL_ACCOUNT + \
+               ':'+MYSQL_PASSWORD + \
+               '@'+MYSQL_HOST + \
+               '/'+MYSQL_DATABASE + \
+               '?'+MYSQL_CHARTSET
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'

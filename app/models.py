@@ -33,6 +33,31 @@ class aop_object_score(db.Model):
     password = db.Column(db.UnicodeText)
 
 
+# model模板
+class aop_model_template(db.Model):
+    __tablename__ = 'aop_model_template'
+
+    sys_id = db.Column(db.VARCHAR(100), primary_key=True)
+    object_id = db.Column(db.VARCHAR(100), primary_key=True)
+    model_id = db.Column(db.INTEGER, primary_key=True)
+    model_name = db.Column(db.VARCHAR(100))
+    table_name = db.Column(db.VARCHAR(100))
+    score = db.Column(db.DECIMAL(5,2), default=0)
+    update_time = db.Column(db.DATETIME)
+    object_type = db.Column(db.VARCHAR(100))
+
+class aop_loadinfo(db.Model):
+    __table_name__ = 'aop_loadinfo'
+
+    dbname = db.Column(db.VARCHAR(100), primary_key=True)
+    status = db.Column(db.INTEGER)
+    inst_id = db.Column(db.INTEGER)
+    snap_id = db.Column(db.INTEGER)
+    object_id = db.Column(db.VARCHAR(100))
+    oraconn = db.Column(db.VARCHAR(100))
+    mysqlconn = db.Column(db.VARCHAR(100))
+
+
 class aop_model_score(db.Model):
     __tablename__ = 'aop_model_score'
 
@@ -44,6 +69,16 @@ class aop_model_score(db.Model):
     table_name = db.Column(db.UnicodeText)
     # table_name不作为主键。防止model_id冲突
     score = db.Column(db.DECIMAL)
+
+
+class zabbix_warning(db.Model):
+    __tablename__ = 'zabbix_warning'
+
+    time = db.Column(db.VARCHAR(100),primary_key=True)
+    site_id = db.Column(db.VARCHAR(100),primary_key=True)
+    info = db.Column(db.VARCHAR(100))
+    type = db.Column(db.VARCHAR(100))
+    status = db.Column(db.VARCHAR(100))
 
 
 class Role(db.Model):

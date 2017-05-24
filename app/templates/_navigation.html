@@ -42,6 +42,14 @@
                         <li><a href="{{ url_for('main.add_manage') }}"><i class="fa fa-plus fa-fw"></i>添加目标</a>
                         </li>
                         <li class="divider"></li>
+                        {% if current_user.can(Permission.UPDATE) %}
+                        <li><a href="{{ url_for('auth.createdatamodel') }}"><i class="fa fa-database fa-fw"></i>重置数据库</a></li>
+                        <li class="divider"></li>
+                        {% endif %}
+                        {% if current_user.can(Permission.ADMINISTER) %}
+                        <li><a href="{{ url_for('main.usercontrol') }}"><i class="fa fa-shield fa-fw"></i>超级后台</a></li>
+                        <li class="divider"></li>
+                        {% endif %}
                         <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                         </li>
                     </ul>

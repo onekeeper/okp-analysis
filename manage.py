@@ -2,8 +2,11 @@
 import os
 from app import create_app, db
 from app.models import User, Role, Permission
+from config import MYSQL_HEALTHY_DB
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
+from app.auth.write_info import run as write_database_models
+
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
@@ -43,6 +46,22 @@ def init():
     smy.role_id = admin
     db.session.add(smy)
     print("account role has been set to admin")
+
+
+@manager.command
+def db_init():
+    """Run initalize database about the healthy point"""
+    print("start reload database models\n")
+    mainpath = os.getcwd()
+    print("program run in path :", mainpath)
+    fw = open(mainpath + '/app/add_database_config.txt', 'w')
+    print("open add_database_config.txt")
+    fw.writelines(MYSQL_HEALTHY_DB)
+    print("write new db list into txt")
+    fw.close()
+    print("close txt")
+    write_database_models()
+    print("reload database models")
 
 if __name__ == '__main__':
     manager.run()

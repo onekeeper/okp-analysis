@@ -5,7 +5,7 @@ from flask import render_template, redirect, request, url_for, flash
 from flask_login import login_user, logout_user, login_required, \
     current_user
 
-from app.auth.write_info import run
+from app.auth.write_info import run as write_database_models
 from . import auth
 from .forms import LoginForm, RegistrationForm, ChangePasswordForm,\
      ChangeEmailForm, ChangeUsernameForm, ChangeDatabaseModel, ResetPasswordForm
@@ -31,19 +31,6 @@ def logout():
     logout_user()
     flash('You have been logged out.')
     return redirect(url_for('main.index'))
-
-
-@auth.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(email=form.email.data,
-                    username=form.username.data,
-                    password=form.password.data)
-        db.session.add(user)
-        flash('You can now login.')
-        return redirect(url_for('auth.login'))
-    return render_template('auth/register.html', form=form)
 
 
 @auth.route('/change-password', methods=['GET', 'POST'])
@@ -114,17 +101,15 @@ def resetpassword():
 @login_required
 def createdatamodel():
     mainpath = os.getcwd()
-    print(mainpath)
-    sys.path.append(mainpath)
+    form = ChangeDatabaseModel()
     if current_user.is_operate:
-        form = ChangeDatabaseModel()
         if request.method == 'POST':
-            fw = open(mainpath + '/add_database_config.txt', 'w')
+            fw = open(mainpath + '/app/add_database_config.txt', 'w')
             fw.writelines(form.databasename.data)
             fw.close()
-            run()
+            write_database_models()
             flash("reload success")
-    fr = open(mainpath + '/add_database_config.txt', 'r+')
+    fr = open(mainpath + '/app/add_database_config.txt', 'r+')
     post = fr.readlines()
     fr.close()
     return render_template('auth/reload_databasemodel.html', form=form, post=post)

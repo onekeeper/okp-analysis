@@ -1,20 +1,6 @@
 from . import db
 
 
-
-#告警
-#站点-id;name-监控项;status-统计OK和PROBLEM的数量;value-设备
-class zabbix_warning(db.Model):
-    __tablename__ = 'zabbix_warning'
-    __bind_key__ =  'target_warning'
-
-    time = db.Column(db.VARCHAR,primary_key=True)
-    site_id = db.Column(db.VARCHAR,primary_key=True)
-    info = db.Column(db.VARCHAR)
-    type = db.Column(db.VARCHAR)
-    status = db.Column(db.VARCHAR)
-
-
 # 全局变量。修改表指向数据库的映射
 # global tablename
 # tablename = 'view_flow_parse'

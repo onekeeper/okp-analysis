@@ -6,6 +6,7 @@ import datetime
 import uuid
 from .objects import AddObjectForm
 from ..models import *
+from ..auth.forms import *
 
 
 @main.route('/', methods=['GET'])
@@ -424,10 +425,7 @@ def reportweb():
                            site_name=site_name)
 
 
-# 演示用增加的模块
-@main.route('/pie', methods=['GET', 'POST'])
-def pie():
-    return render_template('pie.html')
+
 
 
 # 用户管理页面
@@ -472,3 +470,15 @@ def usercontrol():
             return redirect(url_for('main.usercontrol'))
     else:
         return redirect(url_for('main.index'))
+
+@main.route('/useradd', methods=['GET', 'POST'])
+def useradd():
+    form = UserAdd()
+    if form.validate_on_submit():
+        newuser = User(
+                       username=form.username.data,
+                       password=form.password.data,
+                       email=form.email.data)
+        db.session.add(newuser)
+        flash("User has been add")
+    return render_template('auth/useradd.html',form=form)

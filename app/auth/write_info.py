@@ -6,74 +6,10 @@ import sys
 def run():
     mainpath = os.getcwd()
     sys.path.append(mainpath)
-    fr = open(mainpath+'/add_database_config.txt','r+')
+    fr = open(mainpath+'/app/database_model_config.txt','r+')
     fw = open(mainpath+'/app/database_model.py','w+',encoding='utf-8')
 
     fw.writelines('''from . import db
-
-class aop_system(db.Model):
-    __tablename__ = 'aop_system'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText,primary_key=True)
-    sysname = db.Column(db.UnicodeText)
-    status = db.Column(db.Integer)
-    score = db.Column(db.DECIMAL)
-
-
-class aop_object_score(db.Model):
-    __tablename__ = 'aop_object_score'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
-    object_type = db.Column(db.UnicodeText)
-    object_name = db.Column(db.UnicodeText)
-    instance_name = db.Column(db.UnicodeText)
-    score = db.Column(db.DECIMAL)
-    status = db.Column(db.Integer)
-    username = db.Column(db.UnicodeText)
-    password = db.Column(db.UnicodeText)
-
-
-class aop_model_score(db.Model):
-    __tablename__ = 'aop_model_score'
-    __bind_key__ = 'hzmc_data'
-
-    sys_id = db.Column(db.UnicodeText, primary_key=True)
-    object_id = db.Column(db.UnicodeText, primary_key=True)
-    model_id = db.Column(db.UnicodeText, primary_key=True)
-    object_type = db.Column(db.UnicodeText,primary_key=True)
-    model_name = db.Column(db.UnicodeText)
-    table_name = db.Column(db.UnicodeText)
-    #table_name不作为主键。防止model_id冲突
-    score = db.Column(db.DECIMAL)
-
-
-#model模板
-class aop_model_template(db.Model):
-    __tablename__ = 'aop_model_template'
-    __bind_key__ =  'hzmc_data'
-
-    object_type = db.Column(db.UnicodeText, primary_key=True)
-    model_id = db.Column(db.UnicodeText, primary_key=True)
-    model_name = db.Column(db.UnicodeText)
-    table_name = db.Column(db.UnicodeText)
-
-
-
-#告警
-#站点-id;name-监控项;status-统计OK和PROBLEM的数量;value-设备
-class zabbix_warning(db.Model):
-    __tablename__ = 'zabbix_warning'
-    __bind_key__ =  'target_warning'
-
-    time = db.Column(db.VARCHAR,primary_key=True)
-    site_id = db.Column(db.VARCHAR,primary_key=True)
-    info = db.Column(db.VARCHAR)
-    type = db.Column(db.VARCHAR)
-    status = db.Column(db.VARCHAR)
-
 
 # 全局变量。修改表指向数据库的映射
 # global tablename

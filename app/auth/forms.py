@@ -81,3 +81,13 @@ class ResetPasswordForm(FlaskForm):
                                               'numbers, dots or underscores')])
     submit = SubmitField('Reset Password')
 
+
+class UserAdd(FlaskForm):
+    username = StringField('Username',validators=[DataRequired(), Length(1,50),
+                                                  Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
+                                                  'UserNames must have only letters, numbers, dots or underscores')])
+    email = StringField('Email', validators=[DataRequired(), Length(1, 64), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+
+    submit = SubmitField('Add User')
+
