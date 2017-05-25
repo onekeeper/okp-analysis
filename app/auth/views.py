@@ -104,12 +104,12 @@ def createdatamodel():
     form = ChangeDatabaseModel()
     if current_user.is_operate:
         if request.method == 'POST':
-            fw = open(mainpath + '/app/add_database_config.txt', 'w')
+            fw = open(os.path.join(mainpath,'run/add_database_config.txt'), 'w')
             fw.writelines(form.databasename.data)
             fw.close()
             write_database_models()
             flash("reload success")
-    fr = open(mainpath + '/app/add_database_config.txt', 'r+')
+    fr = open(os.path.join(mainpath,'run/add_database_config.txt'), 'r+')
     post = fr.readlines()
     fr.close()
     return render_template('auth/reload_databasemodel.html', form=form, post=post)

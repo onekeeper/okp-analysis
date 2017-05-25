@@ -54,7 +54,7 @@ def db_init():
     print("start reload database models\n")
     mainpath = os.getcwd()
     print("program run in path :", mainpath)
-    fw = open(mainpath + '/app/add_database_config.txt', 'w')
+    fw = open(os.path.join(mainpath,'run/add_database_config.txt'), 'w')
     print("open add_database_config.txt")
     fw.writelines(MYSQL_HEALTHY_DB)
     print("write new db list into txt")

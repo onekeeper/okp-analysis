@@ -6,8 +6,10 @@ import sys
 def run():
     mainpath = os.getcwd()
     sys.path.append(mainpath)
-    fr = open(mainpath+'/app/database_model_config.txt','r+')
-    fw = open(mainpath+'/app/database_model.py','w+',encoding='utf-8')
+    fr = open(os.path.join(mainpath, 'run/add_database_config.txt'),'r+')
+    print(">>>>>>>>>>>>>>")
+    print(os.path.join(mainpath, 'run/add_database_config.txt'))
+    fw = open(os.path.join(mainpath, 'app/database_model.py'),'w+',encoding='utf-8')
 
     fw.writelines('''from . import db
 
