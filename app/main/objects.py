@@ -3,6 +3,7 @@ from wtforms import StringField, PasswordField, SelectField, \
     SubmitField
 from wtforms import ValidationError
 from wtforms.validators import DataRequired, Length
+from app.models import aop_system
 
 
 class AddObjectForm(FlaskForm):
@@ -20,8 +21,13 @@ class AddObjectForm(FlaskForm):
     dbname = StringField("数据库名称")
     submit = SubmitField('添加')
 
-    def validate_dbname(self):
+    @staticmethod
+    def validate_dbname(self, field):
         if self.type.data == 'oracle':
             if not self.dbname.data and not self.dbname.data.strip():
                 raise ValidationError('类型为数据库时，数据库名称不能为空!')
 
+    @staticmethod
+    def validate_sys_id(self, field):
+        if aop_system.query.filter_by(sys_id=field.data).first() is not None:
+            raise ValidationError('该系统已经存在')

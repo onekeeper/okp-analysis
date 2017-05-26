@@ -94,47 +94,10 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-database fa-fw"></i> 数据库健康分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level mc-sideNav collapse">
-                                {% for second in system_list %}
-                                <li>
-                                    <a href="{{ url_for('.management_2',sys_id=second.sys_id,sysname=second.sysname) }}">
-                                        <span>{{ second.sysname }}</span>
-                                        <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level collapse">
-                                        {% for third in object_list %}
-                                            {% if third.sys_id == second.sys_id %}
-                                            <li>
-                                            <a href="{{ url_for('.management_3',sys_id=second.sys_id,object_id=third.object_id,sysname=second.sysname,instance_name=third.instance_name) }}">
-                                                <span>{{ third.instance_name }}</span>
-                                                <span class="fa arrow"></span></a>
-                                                <ul class="nav nav-fourth-level collapse">
-                                                    {% for fourth in model_list %}
-                                                        {% if fourth.object_id == third.object_id %}
-    {#                                                    此处model_id的命名有层级关系。总表递增值为100，子表递增值为10.通过取余操作可判断表类型#}
-                                                        {% if fourth.model_id % 100 == 0 %}
-
-                                                        <li>
-                                                            <a href="{{ url_for('.charts',sys_id=second.sys_id,object_id=fourth.object_id,table_name=fourth.table_name,sysname=second.sysname,instance_name=third.instance_name) }}">
-                                                                <span>{{ fourth.model_name }}</span>
-                                                                <span class="fa arrow"></span></a>
-                                                            <ul class="nav nav-fifth-level collapse">
-                                                                <li style="padding-left: 15px">
-                                                                <a href="{{ url_for('.charts',sys_id=second.sys_id,object_id=fourth.object_id,table_name=fourth.model_id,sysname=second.sysname,instance_name=third.instance_name) }}">{{ fourth.model_name }}详情</a>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-
-
-                                                        {% endif %}
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                                {% endfor %}
+                            <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url_for('main.management') }}">告警日志概览</a>
+                            </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

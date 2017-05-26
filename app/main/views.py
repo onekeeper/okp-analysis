@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, abort
 from flask_login import login_required, current_user
 from . import main
 from ..database_model import *
@@ -24,10 +24,7 @@ def management():
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    # left navigation list
-    system_list, object_list, model_list = left_nav()
     return render_template('management.html', posts=posts,
-                           system_list=system_list, object_list=object_list, model_list=model_list,
                            pagination=pagination)
 
 
@@ -42,10 +39,7 @@ def management_2(sys_id):
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    # 获取table_name，传递给图表
-    system_list, object_list, model_list = left_nav()
     return render_template('management_2.html', posts=posts, sys_id=sys_id,
-                           system_list=system_list, object_list=object_list, model_list=model_list,
                            sysname=sysname, pagination=pagination)
 
 
@@ -63,9 +57,7 @@ def management_3(sys_id, object_id):
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    system_list, object_list, model_list = left_nav()
     return render_template('management_3.html', posts=posts, sys_id=sys_id, object_id=object_id,
-                           system_list=system_list, object_list=object_list, model_list=model_list,
                            sysname=sysname, instance_name=instance_name, pagination=pagination)
 
 
@@ -81,6 +73,12 @@ def charts(table_name):
     sysname = request.args.get('sysname')
     instance_name = request.args.get('instance_name')
     stop_paint = False
+    try:
+        aop_model_score.query.filter_by(sys_id=sys_id, object_id=object_id).first().model_name
+    except Exception as e:
+        print(e)
+        abort(404)
+
     # 表格名称
     if str.isdigit(table_name):
         chart_name = aop_model_score.query.filter_by(model_id=table_name).first().model_name + '详情'
@@ -128,10 +126,8 @@ def charts(table_name):
         return redirect(url_for('.none_value',
                                 value="查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据"))
 
-    system_list, object_list, model_list = left_nav()
     return render_template('charts.html', sys_id=sys_id, object_id=object_id, table_name=table_name,
                            sysname=sysname, instance_name=instance_name, chart_name=chart_name,
-                           system_list=system_list, object_list=object_list, model_list=model_list,
                            dic_table=dic_table, list_table=list_table)
 
 
@@ -200,8 +196,8 @@ def add_manage():
             )
             db.session.add(new_object)
 
-            # 依据模板循环添加aop_model_score 记录
-            model_temp_list = aop_model_score.query.filter_by(object_type=form.type.data)
+            # 依据模板循环添加aop_model_template 记录
+            model_temp_list = aop_model_template.query.filter_by(object_type=form.type.data)
             for model_temp in model_temp_list:
                 new_model = aop_model_score(
                     sys_id=form.sys_id.data,
@@ -219,9 +215,7 @@ def add_manage():
         else:
             flash('对象名称已经存在！')
 
-    system_list, object_list, model_list = left_nav()
-    return render_template('add_object.html', system_list=system_list, object_list=object_list, model_list=model_list,
-                           form=form)
+    return render_template('add_object.html', form=form)
 
 
 @main.route('/test', methods=['GET', 'POST'])
@@ -313,9 +307,7 @@ def report():
     top_list.reverse()
     top_warning_ten = top_list[0:10]
 
-    system_list, object_list, model_list = left_nav()
-    return render_template('report.html', system_list=system_list, object_list=object_list, model_list=model_list,
-                           four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
+    return render_template('report.html', four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
                            x_axis_data=x_axis_data, data_pb=data_pb, data_ok=data_ok, maxNum=maxNum)
 
 
@@ -425,9 +417,6 @@ def reportweb():
                            site_name=site_name)
 
 
-
-
-
 # 用户管理页面
 @main.route('/usercontrol', methods=['GET', 'POST'])
 @login_required
@@ -482,3 +471,4 @@ def useradd():
         db.session.add(newuser)
         flash("User has been add")
     return render_template('auth/useradd.html',form=form)
+
