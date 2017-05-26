@@ -32,7 +32,7 @@ class aop_object_score(db.Model):
     status = db.Column(db.VARCHAR(100), default='OK')
     username = db.Column(db.UnicodeText)
     password = db.Column(db.UnicodeText)
-update_time = db.Column(db.DATETIME)
+    update_time = db.Column(db.DATETIME)
 
 
 # model模板
