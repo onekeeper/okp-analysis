@@ -2,7 +2,404 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2d53fef-afaa-4295-abae-56803230ca10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/Artboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/_navigation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/analysis.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/css/content.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/css/footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/css/header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/css/normal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/css/subnav.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/death.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/head/head_caidan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/head/jingling.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/head/jingling_xz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/head/jkongp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/head/jkongp_xz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢__1_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/__MACOSX/images/._++i蠢_鱛59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/++i蠢_鱛18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/__MACOSX/-+/._.DS_Store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/arrowB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/arrowR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/docDown.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/docUp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/doctorImg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/logoBtn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/mc-panel-1-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/1/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/2/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/3/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/4/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/panelImg/5/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/select.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/subnavBg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/subnavSpot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/subnavSpotLight.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/subnavTitle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/subnavTitleLight.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/health_images/images/up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/logo-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/areaLineChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/barChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/circleChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/lineBarChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/lollipop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/mapChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/panel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/pieChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/pointAchart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/progressBar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/radarChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/rankList.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/rankProgress.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/ringChart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/sortBar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/menu/table.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/mod/bg-lollipop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/images/mod/bg-progress-left.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/dark.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/echartGeo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/echarts.common.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/echarts.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/anhui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/anhui.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/aomen.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/aomen.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/beijing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/beijing.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/china.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/china.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/chongqing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/chongqing.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/fujian.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/fujian.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/gansu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/gansu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guangdong.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guangdong.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guangxi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guangxi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guizhou.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/guizhou.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hainan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hainan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hebei.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hebei.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/heilongjiang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/heilongjiang.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/henan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/henan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hubei.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hubei.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hunan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/hunan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jiangsu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jiangsu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jiangxi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jiangxi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jilin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/jilin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/liaoning.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/liaoning.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/neimenggu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/neimenggu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/ningxia.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/ningxia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/qinghai.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/qinghai.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shandong.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shandong.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanghai.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanghai.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanxi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanxi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanxi1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/shanxi1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/sichuan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/sichuan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/tianjin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/tianjin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/world.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/world.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xianggang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xianggang.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xinjiang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xinjiang.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xizang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/xizang.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/yunnan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/yunnan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/zhejiang.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/geo/zhejiang.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/infographic.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/macarons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/roma.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/shine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/echarts3/vintage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/plugin/underscore/underscore.1.8.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/js/subnav.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/tpls/header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/health/tpls/subnav.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/.idea/startbootstrap-sb-admin-2-3.3.7-1.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/data/flot-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/data/morris-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/css/mod/mc-panel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/css/mod/mc-rankProgress.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/css/sb-admin-2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/css/sb-admin-2.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/mod/mc_base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/mod/mc_panel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/mod/mc_rankProgress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/mod/mc_stackline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/sb-admin-2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/dist/js/sb-admin-2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/js/sb-admin-2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/less/sb-admin-2.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/blank.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/buttons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/flot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/forms.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/icons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/morris.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/notifications.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/panels-wells.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/tables.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/pages/typography.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap-social/bootstrap-social.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap-social/bootstrap-social.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap-social/bootstrap-social.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-plugins/dataTables.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-plugins/dataTables.bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-plugins/dataTables.bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-plugins/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-responsive/dataTables.responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-responsive/dataTables.responsive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables-responsive/dataTables.responsive.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.bootstrap4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.bootstrap4.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.foundation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.foundation.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.jqueryui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.jqueryui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.material.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.material.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.semanticui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.semanticui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.uikit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/dataTables.uikit.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/jquery.dataTables.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/jquery.dataTables.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/css/jquery.dataTables_themeroller.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/Sorting icons.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/sort_asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/sort_asc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/sort_both.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/sort_desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/images/sort_desc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.bootstrap4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.bootstrap4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.foundation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.foundation.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.jqueryui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.jqueryui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.material.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.material.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.semanticui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.semanticui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.uikit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/dataTables.uikit.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/jquery.dataTables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/jquery.dataTables.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/datatables/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot-tooltip/jquery.flot.tooltip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot-tooltip/jquery.flot.tooltip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot-tooltip/jquery.flot.tooltip.source.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/excanvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/excanvas.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.colorhelpers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.categories.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.crosshair.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.errorbars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.fillbetween.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.navigate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.pie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.resize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.stack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.symbol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.threshold.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.flot.time.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/flot/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/HELP-US-OUT.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/css/font-awesome.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/animated.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/bordered-pulled.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/extras.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/fixed-width.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/font-awesome.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/icons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/larger.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/list.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/path.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/rotated-flipped.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/screen-reader.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/spinning.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/stacked.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_animated.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_core.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_extras.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_fixed-width.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_larger.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_path.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_screen-reader.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_spinning.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_stacked.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/font-awesome/scss/font-awesome.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/jquery/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/jquery/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/metisMenu/metisMenu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/metisMenu/metisMenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/metisMenu/metisMenu.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/metisMenu/metisMenu.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/morrisjs/morris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/morrisjs/morris.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/morrisjs/morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/raphael/raphael.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/raphael/raphael.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/sb-admin/vendor/underscore/underscore.1.8.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/shine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/None.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/_posts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/death.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/edit_post.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/edit_profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/mod/_panel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/post.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/reportweb.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/user.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/403.html" afterPath="$PROJECT_DIR$/app/templates/errors/403.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/404.html" afterPath="$PROJECT_DIR$/app/templates/errors/404.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/500.html" afterPath="$PROJECT_DIR$/app/templates/errors/500.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_charts.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_healthy_crt.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_macros.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_macros.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_management.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_healthy_sys.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_management_2.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_healthy_obj.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_management_3.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_healthy_mdl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/_management_base.html" afterPath="$PROJECT_DIR$/app/templates/healthy/_healthy_base.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/add_manage.html" afterPath="$PROJECT_DIR$/app/templates/auth/add_manage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/add_object.html" afterPath="$PROJECT_DIR$/app/templates/auth/add_object.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/charts.html" afterPath="$PROJECT_DIR$/app/templates/healthy/healthy_crt.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/management.html" afterPath="$PROJECT_DIR$/app/templates/healthy/healthy_sys.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/management_2.html" afterPath="$PROJECT_DIR$/app/templates/healthy/healthy_obj.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/management_3.html" afterPath="$PROJECT_DIR$/app/templates/healthy/healthy_mdl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/report.html" afterPath="$PROJECT_DIR$/app/templates/warning/waring_preview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database_model.py" afterPath="$PROJECT_DIR$/app/database_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/errors.py" afterPath="$PROJECT_DIR$/app/main/errors.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,111 +411,69 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="144" column="47" lean-forward="true" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
+            <state relative-caret-position="229">
+              <caret line="300" column="100" lean-forward="false" selection-start-line="300" selection-start-column="100" selection-end-line="300" selection-end-column="100" />
               <folding>
                 <element signature="e#0#75#0" expanded="true" />
-                <element signature="e#5938#5986#0" expanded="false" />
-                <element signature="e#6284#8139#0" expanded="false" />
-                <element signature="e#11410#15296#0" expanded="false" />
-                <element signature="e#15400#16968#0" expanded="false" />
-                <element signature="e#17038#17387#0" expanded="false" />
+                <element signature="e#6178#8038#0" expanded="false" />
+                <element signature="e#11253#12821#0" expanded="false" />
+                <element signature="e#12891#13240#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models.py">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="-3170">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database_model.py">
+      <file leaf-file-name="目标管理.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/html/目标管理.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="772" column="28" lean-forward="true" selection-start-line="772" selection-start-column="28" selection-end-line="772" selection-end-column="28" />
+            <state relative-caret-position="-16920">
+              <caret line="38" column="59" lean-forward="false" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_management_3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_management_3.html">
+      <file leaf-file-name="工具箱.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/static/html/工具箱.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+            <state relative-caret-position="229">
+              <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/decorators.py">
+      <file leaf-file-name="告警.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/html/告警.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="148">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monitor_map.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/html/monitor_map.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_charts.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_charts.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1782">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/404.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="403.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/403.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="500.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/500.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="charts.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/charts.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,8 +489,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>os.pat</find>
-      <find>os.path</find>
       <find>da</find>
       <find>data</find>
       <find>databas</find>
@@ -164,9 +517,12 @@
       <find>mainpath</find>
       <find>mainpath+</find>
       <find>score_db</find>
+      <find>none_v</find>
+      <find>../static</find>
     </findStrings>
     <replaceStrings>
       <replace>none_value</replace>
+      <replace>..</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\50255\PycharmProjects\okp-analysis-web</dir>
@@ -196,7 +552,6 @@
         <option value="$PROJECT_DIR$/app/templates/post.html" />
         <option value="$PROJECT_DIR$/app/templates/user.html" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/app/database_model.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/app/auth/views.py" />
         <option value="$PROJECT_DIR$/app/auth/write_info.py" />
@@ -209,8 +564,13 @@
         <option value="$PROJECT_DIR$/app/templates/403.html" />
         <option value="$PROJECT_DIR$/app/templates/500.html" />
         <option value="$PROJECT_DIR$/app/templates/404.html" />
-        <option value="$PROJECT_DIR$/app/main/views.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/database_model.py" />
+        <option value="$PROJECT_DIR$/app/main/views.py" />
+        <option value="$PROJECT_DIR$/app/static/html/目标管理.html" />
+        <option value="$PROJECT_DIR$/app/static/html/告警.html" />
+        <option value="$PROJECT_DIR$/app/static/html/monitor_map.html" />
+        <option value="$PROJECT_DIR$/app/static/html/工具箱.html" />
       </list>
     </option>
   </component>
@@ -223,7 +583,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
@@ -241,6 +601,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,7 +670,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -349,25 +714,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sb-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="okp-analysis-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="okp-analysis-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,13 +738,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/templates/warning" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -405,8 +751,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\run" />
-      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app" />
+      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app\templates\warning" />
+      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app\templates\auth" />
+      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app\auth" />
+      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app\templates\healthy" />
+      <recent name="C:\Users\50255\PycharmProjects\okp-analysis-web\app\templates\errors" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -610,18 +959,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553648" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25888053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -631,7 +981,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -646,35 +995,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/change_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/change_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/change_username.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/register.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/reload_databasemodel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/auth/reset_password.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -689,24 +1009,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/add_manage.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/add_manage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/add_object.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/add_object.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/edit_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -725,31 +1038,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/report.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/warning/waring_preview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/reportweb.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/warning/reportweb.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -791,13 +1090,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/death.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -864,14 +1156,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/management_3.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/healthy_mdl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
           <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_management_2.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/_healthy_obj.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -879,14 +1171,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/management_2.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/healthy_obj.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/management.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/healthy_sys.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
@@ -900,16 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="114" column="46" lean-forward="false" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/main/errors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -918,7 +1200,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/403.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/errors/403.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -926,7 +1208,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/404.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/errors/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
@@ -934,7 +1216,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/charts.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/healthy_crt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -942,7 +1224,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/500.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/errors/500.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="55" />
@@ -950,27 +1232,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_management_3.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/_healthy_mdl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="33" column="16" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="1089">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
+        <state relative-caret-position="528">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_charts.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/healthy/_healthy_crt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1782">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -978,32 +1260,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="990">
+          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/edit_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="772" column="28" lean-forward="true" selection-start-line="772" selection-start-column="28" selection-end-line="772" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="495">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <marker date="1495849176612" expanded="true" signature="20349:20627" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="144" column="47" lean-forward="true" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
+        <state relative-caret-position="229">
+          <caret line="300" column="100" lean-forward="false" selection-start-line="300" selection-start-column="100" selection-end-line="300" selection-end-column="100" />
           <folding>
             <element signature="e#0#75#0" expanded="true" />
-            <element signature="e#5938#5986#0" expanded="false" />
-            <element signature="e#6284#8139#0" expanded="false" />
-            <element signature="e#11410#15296#0" expanded="false" />
-            <element signature="e#15400#16968#0" expanded="false" />
-            <element signature="e#17038#17387#0" expanded="false" />
+            <element signature="e#6178#8038#0" expanded="false" />
+            <element signature="e#11253#12821#0" expanded="false" />
+            <element signature="e#12891#13240#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3170">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/html/告警.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/html/monitor_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/html/目标管理.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16920">
+          <caret line="38" column="59" lean-forward="false" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/html/工具箱.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

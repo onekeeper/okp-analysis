@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "healthy/_macros.html" as macros %}
+
+{% block title %}目标管理{% endblock %}
+
+
+{% block content %}
+<div class="col-lg-10 main table-responsive">
+        <div class="breadcrumb">
+            <a href="{{ url_for('main.management') }}">数据库健康分析</a> &gt;
+            <a href="{{ url_for('main.management_2',sys_id=sys_id,sysname=sysname) }}" target="_self">{{ sysname }}</a> &gt;
+                            <span>{{ instance_name }}</span>
+        </div>
+{% include 'healthy/_healthy_mdl.html' %}
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.management_3',sys_id=sys_id,object_id=object_id,sysname=sysname,instance_name=instance_name) }}
+</div>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}

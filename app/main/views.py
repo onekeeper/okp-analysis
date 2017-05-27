@@ -24,7 +24,7 @@ def management():
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    return render_template('management.html', posts=posts,
+    return render_template('healthy/healthy_sys.html', posts=posts,
                            pagination=pagination)
 
 
@@ -39,7 +39,7 @@ def management_2(sys_id):
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    return render_template('management_2.html', posts=posts, sys_id=sys_id,
+    return render_template('healthy/healthy_obj.html', posts=posts, sys_id=sys_id,
                            sysname=sysname, pagination=pagination)
 
 
@@ -57,7 +57,7 @@ def management_3(sys_id, object_id):
         page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    return render_template('management_3.html', posts=posts, sys_id=sys_id, object_id=object_id,
+    return render_template('healthy/healthy_mdl.html', posts=posts, sys_id=sys_id, object_id=object_id,
                            sysname=sysname, instance_name=instance_name, pagination=pagination)
 
 
@@ -96,7 +96,7 @@ def charts(table_name):
             print(e)
             stop_paint = True
             flash("查询错误。表不存在或异常")
-            return redirect(url_for('.none_value', value="查询错误。请检查aop_model_score表"))
+            return redirect(url_for('.index', value="查询错误。请检查aop_model_score表"))
         list_table = []
         # 初始化存放表单名称的列表
         dic_table = {}
@@ -119,14 +119,14 @@ def charts(table_name):
             if len(test_num1) < 1 or len(test_num2) < 1:
                 stop_paint = True
         except Exception as e:
-            return redirect(url_for('.none_value', value="查询错误。请检查表内容是否为空"))
+            return redirect(url_for('.index', value="查询错误。请检查表内容是否为空"))
 
     if stop_paint is True:
         flash("查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据")
-        return redirect(url_for('.none_value',
+        return redirect(url_for('.index',
                                 value="查询错误。停止生成表。请检查数据库中是否存在该表或表中是否有数据"))
 
-    return render_template('charts.html', sys_id=sys_id, object_id=object_id, table_name=table_name,
+    return render_template('healthy/healthy_crt.html', sys_id=sys_id, object_id=object_id, table_name=table_name,
                            sysname=sysname, instance_name=instance_name, chart_name=chart_name,
                            dic_table=dic_table, list_table=list_table)
 
@@ -151,11 +151,6 @@ def paint_table(table_name, sys_id, object_id):
     #     score2.append(j.score)
     dict_values = {'end_time': end_time, 'score1': score1, 'table_cn_name': table_cn_name}
     return dict_values
-
-
-@main.route('/<value>', methods=['GET', 'POST'])
-def none_value(value):
-    return render_template('None.html', value=value)
 
 
 def left_nav():
@@ -215,12 +210,7 @@ def add_manage():
         else:
             flash('对象名称已经存在！')
 
-    return render_template('add_object.html', form=form)
-
-
-@main.route('/test', methods=['GET', 'POST'])
-def test():
-    return render_template('death.html')
+    return render_template('auth/add_object.html', form=form)
 
 
 # 告警管理
@@ -307,114 +297,8 @@ def report():
     top_list.reverse()
     top_warning_ten = top_list[0:10]
 
-    return render_template('report.html', four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
+    return render_template('warning/waring_preview.html', four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
                            x_axis_data=x_axis_data, data_pb=data_pb, data_ok=data_ok, maxNum=maxNum)
-
-
-@main.route('/reportweb', methods=['GET', 'POST'])
-def reportweb():
-    site_name = request.args.get('top_select')
-    print(site_name)
-    print(">>>>>>>>>>>>>>>>>>>")
-    # datetime相关的类结构参考
-    # https://docs.python.org/3/library/datetime.html
-    # class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
-    # 时间字符串主要参数： %Y %m %d %H %M %S %f  年 月 日 时 分 秒 微秒 %W 周
-    # 二十四小时遗留告警数据采集
-    # 获取当前时间--datetime格式
-    current_time = datetime.datetime.now()
-    # 取得比较值--二十四小时前的datetime值
-    stay_time = current_time - datetime.timedelta(hours=24)
-    # 查询状态为PROBLEM的数据
-    twenty_four_hour_stay = zabbix_warning.query.filter(zabbix_warning.time > stay_time,
-                                                        zabbix_warning.status == 'PROBLEM').all()
-
-    # 三十天遗留告警数据采集
-    # 获取当前时间--datetime格式
-    current_time = datetime.datetime.now()
-    # 取得比较值--三十天前的datetime值
-    stay_time = current_time - datetime.timedelta(days=30)
-    # 查询状态为PROBLEM的数据
-    thirty_day_stay = zabbix_warning.query.filter(zabbix_warning.time > stay_time,
-                                                  zabbix_warning.status == 'PROBLEM').all()
-
-    # 最近24小时告警趋势
-    # 获取当前时间--datetime格式
-    current_time = datetime.datetime.now()
-    # 计算查询天数范围
-    day_range = 1
-    search_range = current_time - datetime.timedelta(days=day_range)
-    # 查询时间范围内的所有数据
-    bar_data = zabbix_warning.query.filter(zabbix_warning.time > search_range,
-                                           zabbix_warning.time < current_time).all()
-    # 与前端保持一致需要用到的列表初始化/命名风格与前端保持一致
-    x_axis_data = []
-    # data_ok = []
-    # data_pb = []
-
-    # 求取柱状图横坐标(时间)
-    for i in range(day_range * 24):
-        # 字符串格式的搜索开始时间
-        current_hour_range = (
-        datetime.datetime.strftime((search_range + datetime.timedelta(hours=i + 1)), "%Y-%m-%d %H:00:00"))
-        # 向柱状图X轴列表写入信息
-        x_axis_data.append(current_hour_range)
-
-        # 初始化判断条件及累加器
-        # judge = current_time.hour+1
-    x_axis_data_first = datetime.datetime.strptime(x_axis_data[0], "%Y-%m-%d %H:%M:%S")
-    intital_value = 0
-    intital_length = len(x_axis_data)
-    data_ok = [intital_value] * intital_length
-    data_pb = [intital_value] * intital_length
-
-    # 遍历所有数据，求取柱状图数据
-    # 此处不能用小时数遍历。因为无法保证sqlalchemy的order_by对于datetime格式的数据有效
-    for j in bar_data:
-        # 获取时间差(小时),转换成int时，会自动保留整数位
-        time_number = int((j.time - x_axis_data_first).total_seconds() / 3600)
-        if j.status == 'OK':
-            data_ok[time_number] = data_ok[time_number] + 1
-        else:
-            data_pb[time_number] = data_pb[time_number] + 1
-
-            # 插件筛选范围的区间
-    maxNum = max(data_ok + data_pb)
-
-    # 最近30天告警前十
-    # 初始化分类字典
-    top_warning = {}
-    top_name = {}
-    # 计算查询天数范围
-    day_range2 = 30
-    search_range2 = current_time - datetime.timedelta(days=day_range2)
-    # 查询时间范围内的所有数据
-    bar_data2 = zabbix_warning.query.filter(zabbix_warning.time > search_range2,
-                                            zabbix_warning.time < current_time).all()
-    for j in bar_data2:
-        if j.site_id in top_warning.keys():
-            top_warning.update({j.site_id: top_warning[j.site_id] + 1})
-        else:
-            top_warning.update({j.site_id: 1})
-            top_name.update({j.site_id: j.info})
-
-            # 初始化二维列表
-    top_list = []
-    for k in top_warning:
-        top_list.append([k, top_name[k], top_warning[k]])
-
-        # 将二维列表以子列表中指定元素的值进行正序排序
-        # 必须用赋值语句进行重新赋值
-    top_list = sorted(top_list, key=lambda s: s[2])
-    # 反转列表并取出前十项
-    top_list.reverse()
-    top_warning_ten = top_list[0:10]
-    print(top_warning_ten)
-
-    return render_template('reportweb.html', twenty_four_hour_stay=twenty_four_hour_stay,
-                           thirty_day_stay=thirty_day_stay, top_warning_ten=top_warning_ten,
-                           x_axis_data=x_axis_data, data_pb=data_pb, data_ok=data_ok, maxNum=maxNum,
-                           site_name=site_name)
 
 
 # 用户管理页面

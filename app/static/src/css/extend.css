@@ -1,0 +1,246 @@
+body{
+	background:#ebeef0;
+}
+
+.navbar a,.navbar a:hover{
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.full-content{
+	margin-left:0px !important;
+	padding-left:15px !important;
+	padding-right:15px !important;
+	padding-top:0px !important;
+	background-color:#ebeef0 !important;
+}
+
+.main-content{
+	padding-left:15px !important;
+	padding-right:15px !important;
+	padding-top:0px !important;
+	background-color:#ebeef0 !important;
+	margin-left:265px !important;
+}
+
+.navbar-mc{
+	background-color:#ffffff;
+	height:76px;
+	margin-bottom: 0;
+	font-family: "Microsoft YaHei";
+}
+
+.navbar-header{
+	float:left;
+    width: 200px;
+    height: 44px;
+    cursor:pointer;
+    background: url(../images/logo.png) no-repeat 15px center;
+}
+
+.menu-top{
+	float:left;
+	height: 44px;
+	line-height:44px;
+	width:600px;
+	color:#0a466a;
+	font-size:15px;
+	font-weight:normal;
+}
+
+.menu-top ul{
+	list-style-type:none;
+	margin-left:-45px;
+}
+
+.menu-top ul li{
+	float:left;
+	padding:0 18px 0 0;
+}
+
+.menu-top ul li a{
+    display:inline-block;
+	height: 44px;
+	color:#0a466a;
+}
+
+.menu-top ul li.active a{
+	background:url(../images/Rectangle.png) no-repeat center bottom;
+}
+
+.menu-list{
+	background:#0a466a;
+	height:32px;
+	line-height:32px;
+	width:100%;
+	margin-top: 44px;
+	position: relative;
+	font-size:13px;
+}
+
+.menu-list ul{
+	list-style-type:none;
+	position:absolute;
+	left:-25px;
+}
+
+.menu-list ul li{
+	float:left;
+	padding: 0px 20px 0px 0px;
+}
+
+.menu-list ul li a,.menu-list ul li a:hover{
+    display:inline-block;
+	height: 30px;
+	color:#c5d2db !important;
+}
+
+.menu-list ul li.active a{
+    display:inline-block;
+	height: 30px;
+	color:#edf1f4 !important;
+	border-bottom:2px solid #1484c7;
+}
+
+/*侧栏*/
+.sidebar-mc{
+	left:14px;
+	top:38px;
+}
+
+.sidebar-mc ul li a,.sidebar-mc ul li a:hover {
+    background-color: #ffffff !important; 
+    border-bottom: 1px solid #ebeef0;
+    color: #0475B8 !important;
+}
+
+.sidebar-mc .nav-second-level li a {
+    padding-left: 15px;
+}
+
+.split-li{
+	background:#ebeef0;height:18px;
+}
+
+.nav-mc{
+	margin-bottom:18px;
+	background-color: #ffffff;
+	padding:8px 0px;
+}
+
+.sidebar-mc ul li a.nav-title{
+	color:#3d545a !important;
+	font-family: "Microsoft YaHei";
+	border-bottom:0px;
+	height: 44px;
+    line-height: 24px;
+    background:url(../images/more.png) no-repeat 200px 16px;
+}
+
+.sidebar-mc .arrow {
+ 	color: #bbc6cb;
+    font-size: 22px;
+    margin-top: -3px;
+}
+
+.sidebar-mc ul li a.selected{
+	color:#3C5563 !important;
+}
+
+/*end 侧栏*/
+
+.col-reset{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.page-title{
+	height:44px;
+	line-height:44px;
+	color:#1f2c33;
+}
+
+.page-header{
+	border-bottom:1px solid #dfe4e7;
+	margin-top: 12px;
+    margin-bottom: 15px;
+    font-size:20px;
+    font-family: "Microsoft YaHei";
+}
+
+/*主体部分*/
+.panel-mc{
+	border:0px;
+}
+
+.panel-body-chart{
+	min-height:380px;
+}
+
+.panel-heading-mc{
+    background-color: #FFFFFF !important;
+    border-bottom:0px;
+    color:#3c5563 !important;
+    font-size:14px;
+    font-weight:bold;
+    font-family: "Microsoft YaHei";
+}
+
+/*分页列表*/
+.table-list-mc tbody tr th,.table-list-mc tbody tr td{
+    padding:5px 8px;
+}
+
+/*版权*/
+
+.footer-info{
+	text-align:center;
+}
+
+/*工具箱*/
+
+
+.tx-tool{
+	background:url("../images/txTool.png") no-repeat center 28px;
+}
+
+.pin-tool{
+	background:url("../images/pinTool.png") no-repeat center 28px;
+}
+
+.data-tool{
+	background:url("../images/dataTool.png") no-repeat center 28px;
+}
+
+.report-tool{
+	background:url("../images/reportTool.png") no-repeat center 28px;
+}
+
+.panel-body-tool{height:272px;}
+
+.panel-body-tool .row{height:272px;}
+
+.panel-body-tool .row div{height:272px;text-align:center;padding:160px 30px 30px 30px;}
+
+.panel-body-tool .row div span{
+	font-size:14px;
+	color:#222f36;
+    font-weight: bold;
+}
+
+.panel-body-tool .row div p{
+	font-size:12px;
+	margin-top:12px;
+	color:#798185;
+}
+
+/*复原bootstrap row缩进*/
+.reset-row{
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:20px;
+	margin-top:-10px;
+}
+
+
+
