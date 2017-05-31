@@ -4,6 +4,7 @@ from . import main
 from ..database_model import *
 import datetime
 from ..models import *
+from config import MON_URL
 
 
 @main.route('/', methods=['GET'])
@@ -232,6 +233,8 @@ def alarm_monitoring():
                            x_axis_data=x_axis_data, data_pb=data_pb, data_ok=data_ok, maxNum=maxNum)
 
 
-
+@main.route('/mon-server')
+def mon_server():
+    return redirect(MON_URL)
 
 

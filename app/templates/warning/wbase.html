@@ -51,7 +51,7 @@
 				<div class="menu-top">
 					 <ul>
                                 {% if current_user.is_authenticated %}
-                                <li><a href="okp-mon-server:8081">监控管理</a></li>
+                                <li><a href="{{ url_for('main.mon_server') }}">监控管理</a></li>
                                 <li><a href="{{ url_for('main.alarm_monitoring') }}">告警分析</a></li>
                                 <li><a href="{{ url_for('main.system_health') }}">数据库健康分析</a></li>
                                 <li><a href="{{ url_for('toolbox.index') }}">运维工具箱</a></li>

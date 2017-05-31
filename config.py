@@ -1,4 +1,5 @@
 import os
+import sys
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # global variables
@@ -8,9 +9,19 @@ MYSQL_ACCOUNT = 'root'
 MYSQL_PASSWORD = 'hzmcmysql'
 MYSQL_CONNECT = 'mysql+pymysql'
 MYSQL_CHARTSET = 'charset=utf8'
+MON_URL = 'http://127.0.0.1:8080'
 
 # global init healthy databases
-MYSQL_HEALTHY_DB = 'hzmc111,hzmc222'  # with no blankspace after comma; and same style with add_database_config
+main_path = os.getcwd()
+sys.path.append(main_path)
+fr = open(os.path.join(main_path, 'run/add_database_config.txt'),'r+')
+# MYSQL_HEALTHY_DB = 'hzmc_111,hzmc_222'  # with no blank_space after comma; and same style with add_database_config
+MYSQL_HEALTHY_DB = fr.readline()
+MYSQL_HEALTHY_DB = MYSQL_HEALTHY_DB.rstrip('\n')
+
+print(">>>>>>>>>>>>>>>>>>>>")
+print("MYSQL_HEALTHY_DB : ",MYSQL_HEALTHY_DB)
+print(">>>>>>>>>>>>>>>>>>>>")
 
 # set database URI
 DATABASE_URI = MYSQL_CONNECT + \
@@ -19,6 +30,21 @@ DATABASE_URI = MYSQL_CONNECT + \
                '@'+MYSQL_HOST + \
                '/'+MYSQL_DATABASE + \
                '?'+MYSQL_CHARTSET
+
+# init all binds
+DATABASE_BINDS = {}
+
+# deal the text string , load into an arr
+HEALTHY_DB_LIST = MYSQL_HEALTHY_DB.split(',')
+
+for i in HEALTHY_DB_LIST:
+    DATABASE_BINDS[i] = MYSQL_CONNECT + \
+               '://'+MYSQL_ACCOUNT + \
+               ':'+MYSQL_PASSWORD + \
+               '@'+MYSQL_HOST + \
+               '/'+i + \
+               '?'+MYSQL_CHARTSET
+
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
@@ -42,9 +68,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = DATABASE_URI
-    SQLALCHEMY_BINDS = {
-        'oracle' : 'mysql+pymysql://root:hzmcmysql@127.0.0.1/oracle'
-    }
+    SQLALCHEMY_BINDS = DATABASE_BINDS
 
 config = {
     'development': DevelopmentConfig,
