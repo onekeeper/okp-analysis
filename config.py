@@ -42,7 +42,9 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = DATABASE_URI
-    SQLALCHEMY_BINDS = {}
+    SQLALCHEMY_BINDS = {
+        'oracle' : 'mysql+pymysql://root:hzmcmysql@127.0.0.1/oracle'
+    }
 
 config = {
     'development': DevelopmentConfig,

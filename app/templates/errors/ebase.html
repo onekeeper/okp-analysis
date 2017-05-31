@@ -1,0 +1,244 @@
+{% extends "bootstrap/base.html" %}
+{#这里 {% extends %} 标记是关键，它告诉模板引擎这个模板“扩展”了另一个模板，
+当模板系统评估这个模板时会先找到父模板。这个扩展标记必须是模板中的第一个标记。
+如果要使用父模板中的块内容，请使用 {{ super() }} 。#}
+{% block doc -%}
+<!DOCTYPE html>
+<html {% block html_attribs %}lang="zh-CN"{% endblock html_attribs %}>
+{%- block html %}
+<head {% block head_attribs %}{% endblock head_attribs %}>
+    {% block head %}
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>页面错误</title>
+
+		<!-- Bootstrap Core CSS -->
+		<link href="{{ url_for('static', filename='src/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+		<!-- MetisMenu CSS -->
+		<link href="{{ url_for('static', filename='src/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+
+		<!-- DataTables CSS -->
+	    <link href="{{ url_for('static', filename='src/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+	    <!-- DataTables Responsive CSS -->
+	    <link href="{{ url_for('static', filename='src/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="{{ url_for('static', filename='src/css/main.css') }}" rel="stylesheet">
+
+		<!-- Extend CSS -->
+		<link href="{{ url_for('static', filename='src/css/extend.css') }}" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="{{ url_for('static', filename='src/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+		<!-- favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='src/images/favicon.ico') }}">
+    {%- endblock head %}
+</head>
+
+<body {% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+        {% block wrapper -%}
+            <div id="wrapper">
+                {% block navbar -%}
+                    <!-- Navigation -->
+                    <nav class="navbar navbar-default navbar-static-top navbar-mc" role="navigation">
+                        <div class="navbar-header">
+                        </div>
+                        <div class="menu-top">
+                             <ul>
+                                {% if current_user.is_authenticated %}
+                                <li><a href="okp-mon-server:8081">监控管理</a></li>
+                                <li><a href="{{ url_for('main.alarm_monitoring') }}">告警分析</a></li>
+                                <li><a href="{{ url_for('main.system_health') }}">数据库健康分析</a></li>
+                                <li><a href="{{ url_for('toolbox.index') }}">运维工具箱</a></li>
+                                <li><a href="{{ url_for('library.index') }}">知识库</a></li>
+                                <li><a href="{{ url_for('auth.index') }}">系统管理</a></li>
+                                <li class="dropdown navbar-right">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="{{ url_for('auth.change_password') }}"><i class="fa fa-edit fa-fw"></i> 修改密码</a>
+                                    </li>
+                                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                                    </li>
+                                </ul>
+                                <!-- /.dropdown-user -->
+                                </li>
+                                {% else %}
+                                <li><a href="{{ url_for('auth.login') }}">账号登录</a></li>
+                                {% endif %}
+                                </ul>
+                        </div>
+                        <!-- /.navbar-header -->
+                        {% block navbar_secondary %}
+                        {% endblock navbar_secondary %}
+                        <div class="menu-list">
+                        </div>
+
+                        <!-- /.navbar-static-side -->
+                    </nav>
+                {%- endblock navbar %}
+                {% block page_wrapper -%}
+                    {% block message %}
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="col-lg-12">
+                            <h2 style="text-align: center">{{ messages }}</h2>
+                            </div>
+                            {% endif %}
+                        {% endwith %}
+                    {% endblock message %}
+                    {% block navbar_left %}
+                        <div class="navbar-default sidebar sidebar-mc" role="navigation">
+                        <div class="sidebar-nav navbar-collapse">
+                            <ul class="nav" id="side-menu">
+                                <li class="active">
+                                    <a href="#" class="nav-title">ORCL<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a href="#" class="selected">解析健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">执行健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">物理I/O健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">逻辑I/O健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Buffer Cache健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">共享池健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Redo健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">回滚段健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">SQL健康指数</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">RAC健康指数</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                                <li class="split-li"></li>
+                                <li>
+                                    <a href="#" class="nav-title">TestData<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a href="blank.html">Blank Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="login.html">Login Page</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-second-level -->
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.sidebar-collapse -->
+                    </div>
+                    {%- endblock navbar_left %}
+			        <div id="page-wrapper" class="main-content">
+                        {% block page_title -%}
+                            <div class="row page-title">
+                                <div class="col-lg-12">
+                                    <h1 class="page-header">告警日志概况</h1>
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                        {%- endblock page_title %}
+                        {% block row -%}
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default panel-mc">
+                                        <!--
+                                        <div class="panel-heading panel-heading-mc">
+                                            Area Chart Example
+                                        </div>
+                                        -->
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body panel-body-chart" id="J_exampleChart">
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!-- /.panel -->
+                                    <div class="panel panel-default panel-mc">
+                                        <div class="panel-heading panel-heading-mc">
+                                            最近4小时遗留告警
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                           <table width="100%" class="table table-striped table-hover table-list-mc" id="J_dataTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Rendering engine</th>
+                                                        <th>Browser</th>
+                                                        <th>Platform(s)</th>
+                                                        <th>Engine version</th>
+                                                        <th>CSS grade</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <!-- /.panel-body -->
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                                <!-- /.col-lg-12 -->
+                            </div>
+                            <!-- /.row -->
+                        {%- endblock row %}
+			        </div>
+			    <!-- /#page-wrapper -->
+
+                <!--footer -->
+                <div class="row reset-row">
+                    <div class="col-lg-12">
+                        <div class="footer-info">
+                            杭州美创科技有限公司 版权所有 2017
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            {%- endblock page_wrapper %}
+		    <!-- /#wrapper -->
+        {%- endblock wrapper %}
+        {% block scripts -%}
+            {% block src -%}
+            <!-- jQuery -->
+		<script src="{{ url_for('static', filename='src/vendor/jquery/jquery.min.js') }}"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="{{ url_for('static', filename='src/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+            {%- endblock src %}
+            {% block func -%}
+            {%- endblock func %}
+        {%- endblock scripts %}
+    {%- endblock body %}
+</body>
+{%- endblock html %}
+</html>
+{% endblock doc -%}
+
+
+
+

@@ -78,8 +78,8 @@ class aop_model_score(db.Model):
 class zabbix_warning(db.Model):
     __tablename__ = 'zabbix_warning'
 
-    time = db.Column(db.VARCHAR(100),primary_key=True)
-    site_id = db.Column(db.VARCHAR(100),primary_key=True)
+    time = db.Column(db.DATETIME, primary_key=True)
+    site_id = db.Column(db.VARCHAR(100), primary_key=True)
     info = db.Column(db.VARCHAR(100))
     type = db.Column(db.VARCHAR(100))
     status = db.Column(db.VARCHAR(100))

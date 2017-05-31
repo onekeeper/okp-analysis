@@ -36,4 +36,10 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
+    from .library import library as library_blueprint
+    app.register_blueprint(library_blueprint, url_prefix='/library')
+
+    from .toolbox import toolbox as toolbox_blueprint
+    app.register_blueprint(toolbox_blueprint, url_prefix='/toolbox')
+
     return app

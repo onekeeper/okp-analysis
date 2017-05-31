@@ -1,0 +1,181 @@
+{% extends "bootstrap/base.html" %}
+{#这里 {% extends %} 标记是关键，它告诉模板引擎这个模板“扩展”了另一个模板，
+当模板系统评估这个模板时会先找到父模板。这个扩展标记必须是模板中的第一个标记。
+如果要使用父模板中的块内容，请使用 {{ super() }} 。#}
+{% block doc -%}
+<!DOCTYPE html>
+<html {% block html_attribs %}lang="zh-CN"{% endblock html_attribs %}>
+{%- block html %}
+<head {% block head_attribs %}{% endblock head_attribs %}>
+    {% block head %}
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %}<title>运维工具箱</title>{% endblock title %}
+
+		<!-- Bootstrap Core CSS -->
+		<link href="{{ url_for('static', filename='src/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+		<!-- MetisMenu CSS -->
+		<link href="{{ url_for('static', filename='src/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+
+		<!-- DataTables CSS -->
+	    <link href="{{ url_for('static', filename='src/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+	    <!-- DataTables Responsive CSS -->
+	    <link href="{{ url_for('static', filename='src/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="{{ url_for('static', filename='src/css/main.css') }}" rel="stylesheet">
+
+		<!-- Extend CSS -->
+		<link href="{{ url_for('static', filename='src/css/extend.css') }}" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="{{ url_for('static', filename='src/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+		<!-- favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='src/images/favicon.ico') }}">
+    {%- endblock head %}
+</head>
+
+<body {% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+        {% block wrapper -%}
+            <div id="wrapper">
+                {% block navbar -%}
+                    <!-- Navigation -->
+                    <nav class="navbar navbar-default navbar-static-top navbar-mc" role="navigation">
+                        <div class="navbar-header">
+                        </div>
+                        <div class="menu-top">
+                             <ul>
+                                {% if current_user.is_authenticated %}
+                                <li><a href="okp-mon-server:8081">监控管理</a></li>
+                                <li><a href="{{ url_for('main.alarm_monitoring') }}">告警分析</a></li>
+                                <li><a href="{{ url_for('main.system_health') }}">数据库健康分析</a></li>
+                                <li><a href="{{ url_for('toolbox.index') }}">运维工具箱</a></li>
+                                <li><a href="{{ url_for('library.index') }}">知识库</a></li>
+                                <li><a href="{{ url_for('auth.index') }}">系统管理</a></li>
+                                <li class="dropdown navbar-right">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="{{ url_for('auth.change_password') }}"><i class="fa fa-edit fa-fw"></i> 修改密码</a>
+                                    </li>
+                                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                                    </li>
+                                </ul>
+                                <!-- /.dropdown-user -->
+                                </li>
+                                {% else %}
+                                <li><a href="{{ url_for('auth.login') }}">账号登录</a></li>
+                                {% endif %}
+                                </ul>
+                        </div>
+                        <!-- /.navbar-header -->
+                        {% block navbar_secondary %}
+                        {% endblock navbar_secondary %}
+                        <div class="menu-list">
+                           <ul>
+                               <li class="active"><a>运维工具箱</a></li>
+                           </ul>
+				        </div>
+                        <!-- /.navbar-static-side -->
+                    </nav>
+                {%- endblock navbar %}
+                {% block page_wrapper -%}
+                    {% block message %}
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="col-lg-12">
+                                    <h2 style="text-align: center">{{ messages }}</h2>
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                    {% endblock message %}
+                    {% block navbar_left %}
+                    {%- endblock navbar_left %}
+                    {% block page_title -%}
+                    {%- endblock page_title %}
+                    {% block row -%}
+                        <!-- /.row -->
+                        <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default panel-mc">
+                        <!--
+                        <div class="panel-heading panel-heading-mc">
+                            Area Chart Example
+                        </div>
+                        -->
+                        <!-- /.panel-heading -->
+                        <div class="panel-body panel-body-tool">
+                            <div class="row">
+                                <div class="col-lg-3 tx-tool">
+                                     <span>TX事务锁阻塞处理</span>
+                                     <p>
+                                        多种方式展示、Kill阻塞进程，并生成详细阻塞报告、Kill进程报告。
+                                     </p>
+                                </div>
+                                <div class="col-lg-3 pin-tool">
+                                    <span>Lib Cache lock/pin阻塞处理</span>
+                                    <p>
+                                        自动分析、定位Library cache Lock/Pin阻塞源头，并显示相关信息、Kill源头阻塞进程、记录日志。
+                                    </p>
+                                </div>
+                                <div class="col-lg-3 data-tool">
+                                    <span>新增数据文件工具</span>
+                                    <p>
+                                        根据最后创建的数据文件信息，为表空间新增数据文件。可针对各自文件系统或ASM。
+                                    </p>
+                                </div>
+                                <div class="col-lg-3 report-tool">
+                                    <span>日常巡检报告</span>
+                                    <p>
+                                        一键生成日常巡检报告，包括空间和归档使用情况、备份情况等最日常信息。
+                                    </p>
+                                </div>
+                             </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+            </div>
+                        <!-- /.row -->
+                    {%- endblock row %}
+			    <!-- /#page-wrapper -->
+
+                <!--footer -->
+                <div class="row reset-row">
+                    <div class="col-lg-12">
+                        <div class="footer-info">
+                            杭州美创科技有限公司 版权所有 2017
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            {%- endblock page_wrapper %}
+		    <!-- /#wrapper -->
+        {%- endblock wrapper %}
+        {% block scripts -%}
+            {% block src -%}
+            <!-- jQuery -->
+            <script src="{{ url_for('static', filename='src/vendor/jquery/jquery.min.js') }}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{ url_for('static', filename='src/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+            {%- endblock src %}
+            {% block func -%}
+            {%- endblock func %}
+        {%- endblock scripts %}
+    {%- endblock body %}
+</body>
+{%- endblock html %}
+</html>
+{% endblock doc -%}
+
+
+
+

@@ -3,65 +3,46 @@ from flask_login import login_required, current_user
 from . import main
 from ..database_model import *
 import datetime
-import uuid
-from .objects import AddObjectForm
 from ..models import *
-from ..auth.forms import *
 
 
 @main.route('/', methods=['GET'])
-def index():
-    return redirect(url_for('main.management'))
-
-
-# 目标管理-第一页
-@main.route('/management', methods=['GET', 'POST'])
 @login_required
-def management():
+def index():
+    return redirect(url_for('main.system_health'))
+
+
+@main.route('/system_health', methods=['GET', 'POST'])
+@login_required
+def system_health():
     # mainpoint in page
-    page = request.args.get('page', 1, type=int)
-    pagination = aop_system.query.order_by(aop_system.score).paginate(
-        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
-        error_out=False)
-    posts = pagination.items
-    return render_template('healthy/healthy_sys.html', posts=posts,
-                           pagination=pagination)
+    posts = aop_system.query.all()
+    return render_template('healthy/healthy_sys.html', posts=posts)
 
 
 # 目标管理-第二页
-@main.route('/management/<sys_id>', methods=['GET', 'POST'])
+@main.route('/system_health/<sys_id>', methods=['GET', 'POST'])
 @login_required
-def management_2(sys_id):
+def object_health(sys_id):
     sysname = request.args.get('sysname', type=str)
     # sysname是为了传递第一层名称,不能写在def的括号中。因为是请求
-    page = request.args.get('page', 1, type=int)
-    pagination = aop_object_score.query.filter_by(sys_id=sys_id).order_by(aop_object_score.score).paginate(
-        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
-        error_out=False)
-    posts = pagination.items
+    posts = aop_object_score.query.filter_by(sys_id=sys_id).all()
     return render_template('healthy/healthy_obj.html', posts=posts, sys_id=sys_id,
-                           sysname=sysname, pagination=pagination)
+                           sysname=sysname)
 
 
 # 目标管理-第三页
-@main.route('/management/<sys_id>/<object_id>', methods=['GET', 'POST'])
+@main.route('/system_health/<sys_id>/<object_id>', methods=['GET', 'POST'])
 @login_required
-def management_3(sys_id, object_id):
+def model_health(sys_id, object_id):
     sysname = request.args.get('sysname')
     instance_name = request.args.get('instance_name')
     # instance是因为需要满足传递第二层名称
-    page = request.args.get('page', 1, type=int)
-    pagination = aop_model_score.query.filter_by(
-        sys_id=sys_id, object_id=object_id).order_by(
-        aop_model_score.score).paginate(
-        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
-        error_out=False)
-    posts = pagination.items
+    posts = aop_model_score.query.filter_by(
+        sys_id=sys_id, object_id=object_id).all()
     return render_template('healthy/healthy_mdl.html', posts=posts, sys_id=sys_id, object_id=object_id,
-                           sysname=sysname, instance_name=instance_name, pagination=pagination)
+                           sysname=sysname, instance_name=instance_name)
 
-
-# @main.route('/目标管理')
 
 # 目标管理-性能图表
 @main.route('/model/<table_name>', methods=['GET', 'POST'])
@@ -153,6 +134,7 @@ def paint_table(table_name, sys_id, object_id):
     return dict_values
 
 
+@login_required
 def left_nav():
     system_list = aop_system.query.all()
     object_list = aop_object_score.query.all()
@@ -160,62 +142,10 @@ def left_nav():
     return system_list, object_list, model_list
 
 
-# 添加目标
-@main.route('/addmanage', methods=['GET', 'POST'])
-@login_required
-def add_manage():
-    form = AddObjectForm()
-    if form.validate_on_submit():
-        sys_name = aop_system.query.filter_by(sysname=form.sys_name.data).first()
-        sys_uuid = uuid.uuid3(uuid.NAMESPACE_DNS, form.sys_name.data)
-        if sys_name is None:
-            new_system = aop_system(
-                sys_id=form.sys_id.data,
-                sysname=form.sys_name.data,
-                status=0,
-                score=0
-            )
-            db.session.add(new_system)
-
-        object = aop_object_score.query.filter_by(sys_id=sys_uuid.hex, object_id=form.ip.data,
-                                                  object_type=form.type.data).first()
-        if object is None:
-            new_object = aop_object_score(
-                sys_id=form.sys_id.data,
-                object_id=form.ip.data,
-                object_name=form.object_name.data,
-                object_type=form.type.data,
-                instance_name=form.dbname.data,
-                username=form.usename.data,
-                password=form.passwd.data
-            )
-            db.session.add(new_object)
-
-            # 依据模板循环添加aop_model_template 记录
-            model_temp_list = aop_model_template.query.filter_by(object_type=form.type.data)
-            for model_temp in model_temp_list:
-                new_model = aop_model_score(
-                    sys_id=form.sys_id.data,
-                    object_id=form.ip.data,
-                    object_type=form.type.data,
-                    model_id=model_temp.model_id,
-                    model_name=model_temp.model_name,
-                    table_name=model_temp.table_name,
-                    score=0
-                )
-                db.session.add(new_model)
-
-            db.session.commit()
-            flash('对象添加成功！')
-        else:
-            flash('对象名称已经存在！')
-
-    return render_template('auth/add_object.html', form=form)
-
-
 # 告警管理
-@main.route('/report', methods=['GET', 'POST'])
-def report():
+@main.route('/alarm_monitoring', methods=['GET', 'POST'])
+@login_required
+def alarm_monitoring():
     # datetime相关的类结构参考
     # https://docs.python.org/3/library/datetime.html
     # class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
@@ -274,85 +204,34 @@ def report():
 
     # 最近七天告警前十
     # 初始化分类字典
-    top_warning = {}
-    top_name = {}
+    top_warning_site_id = {}
+    top_warning_site_info = {}
+    top_warning_site_type = {}
     # 此处保持和上一个模块相同的时间范围。因此共用查询结果
     # 由于暂时站点和设备共用一个结果集。此处还未对于设备列进行单独处理
     for j in bar_data:
-        if j.site_id in top_warning.keys():
-            top_warning.update({j.site_id: top_warning[j.site_id] + 1})
+        if j.site_id in top_warning_site_id.keys():
+            top_warning_site_id.update({j.site_id: top_warning_site_id[j.site_id] + 1})
         else:
-            top_warning.update({j.site_id: 1})
-            top_name.update({j.site_id: j.info})
+            top_warning_site_id.update({j.site_id: 1})
+            top_warning_site_info.update({j.site_id: j.info})
+            top_warning_site_type.update({j.site_id: j.type})
 
             # 初始化二维列表
     top_list = []
-    for k in top_warning:
-        top_list.append([k, top_name[k], top_warning[k]])
+    for k in top_warning_site_id:
+        top_list.append([k, top_warning_site_info[k], top_warning_site_type[k], top_warning_site_id[k]])
 
         # 将二维列表以子列表中指定元素的值进行正序排序
         # 必须用赋值语句进行重新赋值
-    top_list = sorted(top_list, key=lambda s: s[2])
+    top_list = sorted(top_list, key=lambda s: s[3])
     # 反转列表并取出前十项
     top_list.reverse()
     top_warning_ten = top_list[0:10]
-
-    return render_template('warning/waring_preview.html', four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
+    return render_template('warning/wbase.html', four_hour_stay=four_hour_stay, top_warning_ten=top_warning_ten,
                            x_axis_data=x_axis_data, data_pb=data_pb, data_ok=data_ok, maxNum=maxNum)
 
 
-# 用户管理页面
-@main.route('/usercontrol', methods=['GET', 'POST'])
-@login_required
-def usercontrol():
-    if current_user.is_administrator:
-        if request.method == 'GET':
-            role_list = Role.query.all()
-            user_list = User.query.all()
-            return render_template('auth/usercontrol.html', role_list=role_list,
-                                   user_list=user_list)
-        else:
-            form = request.form
-            ch_list = []
-            print(form)
-            for i in form:
-                # key
-                # print(i)
-                # value
-                # print(form[i])
-                if str.isdigit(i):
-                    usr = form[i]
-                    # print(usr)
-                    if User.query.filter_by(username=usr).first().id == int(i):
-                        ch_list.append(usr)
-                    else:
-                        return redirect(url_for('auth.logout'))
-            # print(">>>>>>>>>>>>>>>>>>>>")
-            for j in ch_list:
-                # print(form[j])
-                # if User.query.filter_by(username=j).first().role_id \
-                # != Role.query.filter_by(name=form[j]).first().id:
-                # else:
-                # return redirect(url_for('auth.logout'))
-                # commit
-                usr_role = Role.query.filter_by(name=form[j]).first().id
-                usr_commit = User.query.filter_by(username=j).first()
-                usr_commit.role_id = usr_role
-                db.session.add(usr_commit)
-                db.session.commit()
-            return redirect(url_for('main.usercontrol'))
-    else:
-        return redirect(url_for('main.index'))
 
-@main.route('/useradd', methods=['GET', 'POST'])
-def useradd():
-    form = UserAdd()
-    if form.validate_on_submit():
-        newuser = User(
-                       username=form.username.data,
-                       password=form.password.data,
-                       email=form.email.data)
-        db.session.add(newuser)
-        flash("User has been add")
-    return render_template('auth/useradd.html',form=form)
+
 
