@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block row %}
+<h2> 选择数据库 </h2>
+<hr>
+<div>
+    <table width="35%">
+     <tr>
+         <td width="25%">
+            <button type="button" class="btn btn-default btn-block" name="bn"
+                    value="bn_select" onclick="go_do()">
+                开始操作
+            </button>
+         </td>
+         <td width="25%">
+             <button type="button" class="btn btn-default btn-block" name="bn"
+                     value="bn_select_re" onclick="go_cancel()">
+                 取消重选
+             </button>
+         </td>
+     </tr>
+ </table>
+</div>
+<hr>
+<form role="form" method="post">
+ <div class="panel-body">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="block_source">
+        <thead>
+            <tr>
+                <th>选择</th>
+                {% for col in col_name_list %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for rec in db_list %}
+            <tr class="even gradeC">
+                <td><input type="checkbox" name="ckb_select#{{ rec[2] }}" value="{{ rec[0] }}"
+                           onclick='selectdb("{{ rec[2] }}" )'></td>
+                <td> {{ rec[0] }}</td>
+                <td> {{ rec[1] }}</td>
+                <td> {{ rec[2] }}</td>
+                <td> {{ rec[3] }}</td>
+                <td> {{ rec[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </div>
+</form>
+{% endblock %}
+
+
+{% block func %}
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#block_source').DataTable({
+            responsive: true,
+            ordering : false
+        });
+    });
+
+     function go_cancel(){
+        var v_item = document.getElementsByTagName("input");
+        var target_name = "ckb_select";
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.split("#");
+            if ( tt[0] == target_name && v_item[i].checked )
+            {
+                v_item[i].checked = false ;
+            }
+        }
+     };
+
+     function go_do(){
+        var v_item = document.getElementsByTagName("input");
+        var target_name = "ckb_select";
+        var str_conn = "NONE";
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.split("#");
+            if ( tt[0] == target_name && v_item[i].checked )
+            {
+                str_conn = "block?ohost=" + v_item[i].value + "&dbname=" + tt[1] ;
+                window.location.href = str_conn ;
+{#                window.location.href = "block?ohost=192.168.200.222&dbname=orcl";#}
+            }
+        }
+        if ( str_conn == "NONE")
+            alert ("请选择数据库");
+    };
+
+    function selectdb( inst_name ){
+        var v_item = document.getElementsByTagName("input");
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.split("#");
+            if ( tt[1] != inst_name)
+            {
+                v_item[i].checked = false ;
+            }
+        }
+    }
+    </script>
+{% endblock %}

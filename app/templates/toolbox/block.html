@@ -1,0 +1,156 @@
+{% extends "toolbox/tbase.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block row %}
+<h2> TX事务锁阻塞处理工具 </h2>
+
+ <form role="form" method="post">
+<div>
+     <table width="50%">
+     <tr>
+         <td width="25%">
+            <button type="submit" class="btn btn-default btn-block" name="bn" value={{ button_oc }}>
+                {{ button_oc == 'bn_open' and '展  开' or '收  回' }}
+            </button>
+         </td>
+         <td width="25%">
+            <button type="submit" class="btn btn-default btn-block" name="bn" value="bn_kill">Kill会话</button>
+         </td>
+         <td width="25%">
+             <button type="button" class="btn btn-default btn-block" name="bn" value="bn_select_view"
+                     onclick="select_all()">选中全部</button>
+         </td>
+         <td width="25%">
+             <button type="button" class="btn btn-default btn-block" name="bn" value="bn_cancel_view"
+                     onclick="cancel_all()">取消全部</button>
+         </td>
+         <td>
+             <button type="submit" class="btn btn-default btn-block" name="bn" value="bn_log">记录阻塞日志</button>
+         </td>
+         <td>
+             <button type="button" class="btn btn-default btn-block" name="bn" value="bn_return"
+                    onclick="bn_return()">
+                 返回上页
+             </button>
+         </td>
+     </tr>
+ </table>
+</div>
+ <div>
+     <hr>
+     <textarea id="mytxt" rows="6" cols="128" style="overflow: scroll; overflow-x: hidden">{{ str_result }}</textarea>
+ </div>
+ <HR>
+ <div class="panel-body">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="block_source">
+        <thead>
+            <tr>
+                <th>全选</th>
+                {% for col in col_name_list %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for rec in block_source_list %}
+            <tr class="even gradeC">
+{#                {% for col in rec %}#}
+                {% if rec[9] == 1 %}
+                    <td><input type="checkbox" id="mytest2" name="main_select{{ rec[0] }}"
+                               value="{{ rec[0],rec[10]}}"
+                               onclick="allSelect( {{rec[11]}},{{ rec[12] }}, {{rec[6] }} )"></td>
+                    <td><input type="checkbox" id="mytest1" name="ckb_select{{ rec[11] }}_{{ rec[12] }}#{{ rec[0] }}"
+                               value="{{ rec[0],rec[10]}}"></td>
+{#                    <td name="ckb_all{{ rec[0] }}" value="{{ rec[0] }}" onclick="allSelect( {{rec[11]}},{{ rec[12] }}, {{rec[6] }} )">全选</td>#}
+                {% else %}
+                    <td>   </td>
+                    <td><input type="checkbox" name="ckb_select{{ rec[11] }}_{{ rec[12] }}#{{ rec[0] }}"
+                               value="{{ rec[0],rec[10]}}"></td>
+                {% endif %}
+                <td> {{ rec[0] }}</td>
+                <td> {{ rec[1] }}</td>
+                <td> {{ rec[2] }}</td>
+                <td> {{ rec[3] }}</td>
+                <td> {{ rec[4] }}</td>
+                <td> {{ rec[5] }}</td>
+                <td> {{ rec[6] }}</td>
+                <td> {{ rec[7] }}</td>
+                <td> {{ rec[8] }}</td>
+{#                {% endfor %}#}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </div>
+</form>
+{% endblock %}
+
+
+{% block func %}
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#block_source').DataTable({
+            responsive: true,
+            ordering : false
+        });
+    });
+
+    function allSelect(id1, id2, n_len ){
+        var v_item = document.getElementsByTagName("input");
+        var target_name = "ckb_select"+id1+"_"+id2 ;
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.split("#");
+            if ( tt[0] == target_name )
+            {
+                v_item[i].checked = ! v_item[i].checked ;
+            }
+        }
+    }
+
+    function select_all(){
+        var v_item = document.getElementsByTagName("input");
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.substring(0,10);
+            if ( tt == "ckb_select" )
+                v_item[i].checked = true ;
+        }
+    }
+
+    function cancel_all(){
+        var v_item = document.getElementsByTagName("input");
+        for ( var i = 0 ; i < v_item.length ; i++ )
+        {
+            tt = v_item[i].name.substring(0,10);
+            if ( tt == "ckb_select" || tt == "main_selec" )
+                v_item[i].checked = false ;
+        }
+    }
+
+    function bn_return( ){
+        window.location.href = "choice";
+    }
+
+    function res_hide( ){
+        var v_item = document.getElementById("mypop");
+        v_item.style.visibility = "hidden" ;
+    }
+
+    function res_view( ){
+        var popUp = document.getElementById("mypop");
+{#        var mytxt = document.getElementById("mytxt");#}
+{#        mytxt.value = "abcabcabc";#}
+        popUp.style.top = "280px";
+        popUp.style.left = "550px";
+        popUp.style.width = 500 + "px";
+        popUp.style.height = 200 + "px";
+        if ( popUp.style.visibility != "visible")
+            popUp.style.visibility = "visible";
+        else
+            popUp.style.visibility = "hidden";
+    }
+    </script>
+{% endblock %}

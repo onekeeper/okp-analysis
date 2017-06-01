@@ -7,13 +7,13 @@ from ..models import *
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[
+    username = StringField('用户名', validators=[
         DataRequired(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
                                               'UserNames must have only letters, '
                                               'numbers, dots or underscores')])
-    password = PasswordField('Password', validators=[DataRequired(), Length(8, 20)])
-    remember_me = BooleanField('Keep me logged in')
-    submit = SubmitField('Log In')
+    password = PasswordField('密码', validators=[DataRequired(), Length(8, 20)])
+    remember_me = BooleanField('保持登录状态')
+    submit = SubmitField('登录')
 
 
 class RegistrationForm(FlaskForm):
@@ -39,11 +39,11 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Username already in use.')
 
 class ChangePasswordForm(FlaskForm):
-    old_password = PasswordField('Old password', validators=[DataRequired()])
-    password = PasswordField('New password', validators=[
+    old_password = PasswordField('原密码', validators=[DataRequired()])
+    password = PasswordField('新密码', validators=[
         DataRequired(), EqualTo('password2', message='Passwords must match')])
-    password2 = PasswordField('Confirm new password', validators=[DataRequired()])
-    submit = SubmitField('Update Password')
+    password2 = PasswordField('确认新密码', validators=[DataRequired()])
+    submit = SubmitField('修改')
 
 
 class ChangeEmailForm(FlaskForm):

@@ -51,7 +51,7 @@
 				<div class="menu-top">
 					 <ul>
                                 {% if current_user.is_authenticated %}
-                                <li><a href="{{ url_for('main.mon_server') }}">监控管理</a></li>
+                                <li><a href="{{ url_for('main.mon_server') }}" target="view_window">监控管理</a></li>
                                 <li><a href="{{ url_for('main.alarm_monitoring') }}">告警分析</a></li>
                                 <li><a href="{{ url_for('main.system_health') }}">数据库健康分析</a></li>
                                 <li><a href="{{ url_for('toolbox.index') }}">运维工具箱</a></li>
@@ -207,7 +207,7 @@
 			<div class="row reset-row">
 				<div class="col-lg-12">
 					<div class="footer-info">
-						杭州美创科技有限公司 版权所有 2017
+						ONEKEEPER 1.0.0 © 2001–2017, MCHZ
 					</div>
 				</div>
 			</div>
