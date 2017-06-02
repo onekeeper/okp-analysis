@@ -35,7 +35,7 @@
 		<link href="{{ url_for('static', filename='src/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
 		<!-- favicon -->
-        <link rel="shortcut icon" href="{{ url_for('static', filename='src/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='src/images/favicon.png') }}">
     {%- endblock head %}
 </head>
 
@@ -47,6 +47,7 @@
                     <!-- Navigation -->
                     <nav class="navbar navbar-default navbar-static-top navbar-mc" role="navigation">
                         <div class="navbar-header">
+                            <div class="logo"></div>
                         </div>
                         <div class="menu-top">
                              <ul>
@@ -57,24 +58,19 @@
                                 <li><a href="{{ url_for('toolbox.index') }}">运维工具箱</a></li>
                                 <li><a href="{{ url_for('library.index') }}">知识库</a></li>
                                 <li><a href="{{ url_for('auth.index') }}">系统管理</a></li>
-                                <li class="dropdown navbar-right">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="{{ url_for('auth.change_password') }}"><i class="fa fa-edit fa-fw"></i> 修改密码</a>
-                                    </li>
-                                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
-                                    </li>
-                                </ul>
-                                <!-- /.dropdown-user -->
-                                </li>
-                                {% else %}
-                                <li><a href="{{ url_for('auth.login') }}">账号登录</a></li>
                                 {% endif %}
                                 </ul>
                         </div>
                         <!-- /.navbar-header -->
+                        <!--login info-->
+                        <ul class="nav navbar-top-links navbar-right top-nav-icons">
+                            {% if current_user.is_authenticated %}
+                            <li><a href="{{ url_for('auth.change_password') }}" class="top-nav-profile" title="修改密码">&nbsp;</a></li>
+                            <li><a href="{{ url_for('auth.logout') }}" class="top-nav-signout" title="退出">&nbsp;</a></li>
+                            {% else %}
+                                <li><a href="{{ url_for('auth.login') }}">账号登录</a></li>
+                            {% endif %}
+                        </ul>
                         {% block navbar_secondary %}
                         {% endblock navbar_secondary %}
                         <div class="menu-list">

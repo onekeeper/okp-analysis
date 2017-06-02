@@ -2,8 +2,8 @@ import os
 import sys
 import time
 import pymysql
-import cx_Oracle
-import paramiko
+# import cx_Oracle
+# import paramiko
 # from .oktools_forms import *
 
 from flask import render_template, redirect, request, url_for, flash
@@ -11,6 +11,11 @@ from flask_login import login_user, logout_user, login_required, \
     current_user
 from . import toolbox
 from .. import db
+
+
+@toolbox.route('/')
+def index():
+    return render_template('toolbox/tbase.html')
 
 
 @toolbox.route('/choice',methods=['GET','POST'])
