@@ -1,8 +1,10 @@
 import os
 import sys
 import time
+import json
 import pymysql
-# import cx_Oracle
+import traceback
+import cx_Oracle
 # import paramiko
 # from .oktools_forms import *
 
@@ -214,6 +216,183 @@ def block():
     db1.close()
     return render_template('toolbox/block.html', col_name_list=col_name_list, str_result=str_result,
                            block_source_list=block_source_list, button_oc=button_oc, ohost = ohost )
+
+
+
+
+@toolbox.route('/add_space',methods=['GET','POST'])
+@login_required
+def add_space():
+    dbname='246数据库'
+
+    ora_conn=cx_Oracle.connect('system/hzmcdba@192.168.200.246/orcl')
+   #ora_conn = cx_Oracle.connect('system/oracle@192.168.200.222/orcl')
+    cur=ora_conn.cursor()
+    myconn = pymysql.connect(host='192.168.200.76', port=13306, user='root', password='hzmcmysql', db='ok_log',
+                             charset='utf8')
+    mycur = myconn.cursor()
+    if request.method == 'POST':
+        print(request.form)
+        if 'bn' in list(request.form.keys()):
+            value=request.form['bn']
+            sql_str='''select t_name, d_name, time,size_mb, free_mb, round(free_mb/size_mb*100,2) 
+                      from (select b.name t_name, ' ' d_name , null time , round(sum(bytes)/1024/1024,0) size_mb, 
+                      (select round(sum(bytes/1024/1024),0)  from dba_free_space where tablespace_name=b.name) free_mb
+                      from V$DATAFILE a, v$tablespace b  where a.ts#=b.ts# group by b.name
+                      union all
+                      select b.name, a.name, CREATION_TIME, round(bytes/1024/1024,0) size_mb, null 
+                      from V$DATAFILE a, v$tablespace b where a.ts#=b.ts# and b.name='%s' )
+                      order by t_name, d_name'''%value
+            logs="doing"
+        elif 'butt' in list(request.form.keys()):
+            if 'optionsRadios' in list(request.form.keys()):
+                    value = request.form['optionsRadios']
+                    mydir = request.form['space_path']
+                    if "one_size" in request.form:
+                        if 'unlimited' in request.form:
+                            one_size = request.form['one_size']
+                            size = request.form['space_size']
+                            alter_str = "ALTER TABLESPACE %s ADD DATAFILE '%s' SIZE %sM AUTOEXTEND ON NEXT %sM MAXSIZE UNLIMITED" % (value, mydir, size, one_size)
+                        else:
+                            one_size=request.form['one_size']
+                            max_size=request.form['max_size']
+                            size = request.form['space_size']
+                            alter_str="ALTER TABLESPACE %s ADD DATAFILE '%s' SIZE %sM AUTOEXTEND ON NEXT %sM MAXSIZE %sM" % (value, mydir, size,one_size,max_size)
+                    else:
+                        size = request.form['space_size']
+                        alter_str = "ALTER TABLESPACE %s ADD DATAFILE '%s' SIZE %sM" % (value, mydir, size)
+                    mytime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                    log_str = '''insert into add_space values ('%s','%s',"%s")''' % (mytime, dbname, alter_str)
+                    print(log_str)
+                    myconn.commit()
+                    try:
+                        cur.execute(alter_str)
+                        logs="添加成功！"
+                    except:
+                        logs=sys.exc_info()[1]
+                    mycur.execute(log_str)
+                    ora_conn.commit()
+                    sql_str = '''select t_name, d_name, time,size_mb, free_mb, round(free_mb/size_mb*100,2) 
+                                         from (select b.name t_name, ' ' d_name , null time , round(sum(bytes)/1024/1024,0) size_mb, 
+                                         (select round(sum(bytes/1024/1024),0)  from dba_free_space where tablespace_name=b.name) free_mb
+                                         from V$DATAFILE a, v$tablespace b  where a.ts#=b.ts# group by b.name
+                                         union all
+                                         select b.name, a.name, CREATION_TIME, round(bytes/1024/1024,0) size_mb, null 
+                                         from V$DATAFILE a, v$tablespace b where a.ts#=b.ts# and b.name='%s' )
+                                         order by t_name, d_name''' % value
+
+
+
+
+
+    else:
+        sql_str = '''select a.tablespace_name, ' ',null,round(b.total ,2),round(a.free,2)， round(a.free/b.total*100,2) from
+                      (select tablespace_name, sum(bytes)/1024/1024 free from dba_free_space group by tablespace_name) a,
+                    (select b.tablespace_name, sum(bytes)/1024/1024 total from dba_tablespaces a, dba_data_files b 
+                    where a.tablespace_name=b.tablespace_name group by b.tablespace_name) b
+                    where a.tablespace_name=b.tablespace_name'''
+        logs="doing"
+    myres = cur.execute(sql_str)
+    get_list = myres.fetchall()
+    value_list=[]
+    print(logs)
+    for v in get_list:
+        v=list(v)
+        if v[3] and v[5] is not None:
+            v[3]=round(v[3],2)
+            v[5]=round(v[5],2)
+        else:
+            pass
+        value_list.append(v)
+    col_list = ['勾选添加表空间', '表空间名', '数据文件名', '创建时间', '总空间(M)', '空闲空间(M)', '剩余空间占比(%)']
+    cur.close()
+    ora_conn.close()
+    mycur.close()
+    myconn.close()
+    return render_template('/toolbox/add_space.html', value_list=value_list, col_list=col_list,logs=logs)
+
+@toolbox.route('/get_space/<space>',methods=['GET','POST'])
+@login_required
+def get_space(space):
+    value=space
+    dbname = '246数据库'
+    ora_conn = cx_Oracle.connect('system/hzmcdba@192.168.200.246/orcl')
+    #ora_conn = cx_Oracle.connect('system/oracle@192.168.200.222/orcl')
+    cur = ora_conn.cursor()
+    myconn = pymysql.connect(host='192.168.200.76', port=13306, user='root', password='hzmcmysql', db='ok_log',
+                             charset='utf8')
+    mycur = myconn.cursor()
+    info_str = '''select name,round(bytes/1024/1024,0) SIZE_MB 
+                                      from v$datafile where CREATION_TIME=(select max(CREATION_TIME) 
+                                      from V$DATAFILE where 
+                                      ts#=(select ts# from  v$tablespace where name='%s') )''' % value
+    inres = cur.execute(info_str)
+    info_list = inres.fetchall()[0]
+    dir = info_list[0]
+    size = info_list[1]
+    if dir.find('.') == -1:
+        if dir[-1].isdigit() == False:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir + '0' + str(i)
+                i += 1
+                t = cur.execute("select count(*) from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+        elif dir[-2:].isdigit() == False:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir[:-1] + '0' + str((int(dir[-1]) + i))
+                i += 1
+                t = cur.execute("select count(*)  from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+        elif dir[-2:].isdigit() == True:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir[:-1] + str((int(dir[-1]) + i))
+                i += 1
+                t = cur.execute("select count(*) from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+    else:
+        if dir[:dir.index('.')][-1].isdigit() == False:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir[:dir.index('.')] + '0' + str(i) + dir[dir.index('.'):]
+                i += 1
+                t = cur.execute("select count(*) from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+        elif dir[:dir.index('.')][-2:].isdigit() == False:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir[:dir.index('.')][:-1] + '0' + str((int(dir[:dir.index('.')][-1]) + i)) + dir[
+                                                                                                     dir.index('.'):]
+                i += 1
+                t = cur.execute("select count(*) from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+        elif dir[:dir.index('.')][-2:].isdigit() == True:
+            t = cur.execute("select count(*) from v$datafile where name='%s'" % dir)
+            te = t.fetchone()[0]
+            i = 1
+            while te == 1:
+                mydir = dir[:dir.index('.')][:-1] + str((int(dir[:dir.index('.')][-1]) + i)) + dir[dir.index('.'):]
+                i += 1
+                t = cur.execute("select count(*) from v$datafile where name='%s'" % mydir)
+                te = t.fetchone()[0]
+    data = dict()
+    data["name"] = value
+    data["path"] = mydir
+    data["size"] = size;
+    return json.dumps(data);
+
 
 
 
