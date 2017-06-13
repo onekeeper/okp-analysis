@@ -105,6 +105,7 @@ class AddObjectForm(FlaskForm):
     usename = StringField("用户名", validators=[DataRequired("用户名不能为空！"), Length(1, 200)])
     passwd = PasswordField("密码", validators=[DataRequired("密码不能为空！"), Length(1, 200)])
     dbname = StringField("数据库名称")
+    inst_id = StringField("实例编号"，validators=[DataRequired("实例编号不能为空！"), Length(1, 10)])
     submit = SubmitField('添加')
 
     @staticmethod

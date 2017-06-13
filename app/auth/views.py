@@ -132,6 +132,18 @@ def increase_object():
                 password=form.passwd.data
             )
             db.session.add(new_object)
+            
+            new_loadinfo = aop_loadinfo(
+                dbname = form.sys_id.data,
+    						status = 1
+                inst_id = form.inst_id.data,
+                snap_id = 1
+                object_id = form.ip.data,
+                oraconn = "%s/%s@%s/%s"%(form.usename.data,form.passwd.data,form.ip.data,form.dbname.data)
+                mysqlconn = form.sys_id.data,
+                update_time = 0
+            )
+            db.session.add(new_loadinfo)
 
             # 依据模板循环添加aop_model_template 记录
             model_temp_list = aop_model_template.query.filter_by(object_type=form.type.data)
