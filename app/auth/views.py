@@ -11,7 +11,7 @@ from .forms import *
 import uuid
 from .. import db
 from ..models import *
-from ...initscore import initscore
+from ..initscore import initscore
 
 
 @auth.route('/', methods=['GET'])
@@ -135,13 +135,12 @@ def increase_object():
             
             new_loadinfo = aop_loadinfo(
                 dbname = form.sys_id.data,
-    						status = 1
+    	        status = 1,
                 inst_id = form.inst_id.data,
-                snap_id = 1
+                snap_id = 1,
                 object_id = form.ip.data,
-                oraconn = "%s/%s@%s/%s"%(form.usename.data,form.passwd.data,form.ip.data,form.dbname.data)
+                oraconn = "%s/%s@%s/%s"%(form.usename.data,form.passwd.data,form.ip.data,form.dbname.data),
                 mysqlconn = form.sys_id.data,
-                update_time = 0
             )
             db.session.add(new_loadinfo)
 
