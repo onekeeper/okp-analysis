@@ -11,6 +11,7 @@ from .forms import *
 import uuid
 from .. import db
 from ..models import *
+from ...initscore import initscore
 
 
 @auth.route('/', methods=['GET'])
@@ -148,6 +149,7 @@ def increase_object():
 
             db.session.commit()
             flash('对象添加成功！')
+            initscore(form.sys_id.data)
         else:
             flash('对象名称已经存在！')
     return render_template('auth/increase_object.html', form=form)
@@ -219,9 +221,11 @@ def reset_sites():
             fw.writelines(form.databasename.data)
             fw.close()
             write_database_models()
+            
             flash("reload success")
     fr = open(os.path.join(mainpath,'run/add_database_config.txt'), 'r+')
     post = fr.readlines()
     fr.close()
+    
     return render_template('auth/reset_sites.html', form=form, post=post)
 
