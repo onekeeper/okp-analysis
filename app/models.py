@@ -54,9 +54,9 @@ class aop_loadinfo(db.Model):
 
     dbname = db.Column(db.VARCHAR(100), primary_key=True)
     status = db.Column(db.INTEGER)
-    inst_id = db.Column(db.INTEGER), primary_key=True)
+    inst_id = db.Column(db.INTEGER,  primary_key=True)
     snap_id = db.Column(db.INTEGER)
-    object_id = db.Column(db.VARCHAR(100)), primary_key=True)
+    object_id = db.Column(db.VARCHAR(100), primary_key=True)
     oraconn = db.Column(db.VARCHAR(100))
     mysqlconn = db.Column(db.VARCHAR(100))
     update_time = db.Column(db.DATETIME)
