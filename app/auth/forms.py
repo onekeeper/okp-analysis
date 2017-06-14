@@ -114,8 +114,8 @@ class AddObjectForm(FlaskForm):
             if not self.dbname.data and not self.dbname.data.strip():
                 raise ValidationError('类型为数据库时，数据库名称不能为空!')
 
-    @staticmethod
-    def validate_sys_id(self, field):
-        if aop_system.query.filter_by(sys_id=field.data).first() is not None:
-            raise ValidationError('该系统已经存在')
+  #  @staticmethod
+   # def validate_sys_id(self, field):
+     #   if aop_system.query.filter_by(sys_id=field.data).first() is not None:
+       #     raise ValidationError('该系统已经存在')
 

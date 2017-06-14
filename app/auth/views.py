@@ -127,6 +127,7 @@ def increase_object():
                 object_id=form.ip.data,
                 object_name=form.object_name.data,
                 object_type=form.type.data,
+                instance_id=form.instance_id.data,
                 instance_name=form.dbname.data,
                 username=form.usename.data,
                 password=form.passwd.data
